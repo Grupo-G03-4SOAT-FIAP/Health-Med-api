@@ -53,10 +53,6 @@ dk-prune: ## clean docker
 dk-up-db:
 	@docker compose up -d db
 
-.PHONY: dk-up-sonar ## up service sonarqube
-dk-up-sonar:
-	@docker compose up -d sonarqube
-
 .PHONY: dk-up ## up all services
 dk-up:
 	@docker compose up --build -d
