@@ -79,17 +79,6 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Documentação
-
-### Arquitetura da aplicação
-
-![arquitetura-de-aplicacao](https://github.com/user-attachments/assets/48c77bcc-2db1-4827-83a4-fa81a9c59c78)
-
-### Arquitetura cloud
-
-![arquitetura-cloud drawio](https://github.com/user-attachments/assets/786abbc1-c27d-4419-a2f8-df2de9c98f34)
-*Clique na imagem para ampliar.*
-
 ## Métricas de código
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Grupo-G03-4SOAT-FIAP_Health-Med-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Grupo-G03-4SOAT-FIAP_Health-Med-api)
