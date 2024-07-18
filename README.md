@@ -34,7 +34,7 @@ diagnósticos. Para viabilizar o desenvolvimento de um sistema que esteja em con
 
 ## Documentação
 
-### Arquitetura da aplicação
+### Arquitetura de aplicação
 
 ![arquitetura-de-aplicacao](https://github.com/user-attachments/assets/48c77bcc-2db1-4827-83a4-fa81a9c59c78)
 
