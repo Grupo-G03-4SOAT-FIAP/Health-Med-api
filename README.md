@@ -1,16 +1,25 @@
+<img src="https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/raw/main/docs/img/H-and-M-logo.png" alt="Health&Med" title="Health&Med" align="right" height="60" />
+
+# Health&Med
+## API do Backend
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Grupo-G03-4SOAT-FIAP_Health-Med-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Grupo-G03-4SOAT-FIAP_Health-Med-api)
+
+Projeto desenvolvido durante o Hackatown da Pós Tech em Software Architecture da FIAP.
+
+▶️[Clique aqui para assistir à apresentação no YouTube!](https://www.youtube.com/@BOPEtechFIAP)
+
+#### Stack
+
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
 
-# Health&Med
-
-Projeto desenvolvido durante o Hackatown da Pós Tech em Software Architecture da FIAP.
-
-
-## Description
+### O PROBLEMA
 
 *A Health&Med, uma startup inovadora no setor de saúde, está desenvolvendo um novo sistema que irá revolucionar a Telemedicina no país. Atualmente, a startup oferece a possibilidade de agendamento de consultas e realização de consultas online (Telemedicina) por meio de sistemas terceiros como Google Agenda e Google Meetings.*
 
@@ -27,6 +36,31 @@ diagnósticos. Para viabilizar o desenvolvimento de um sistema que esteja em con
 2. Navegue até a pasta raiz do projeto;
 3. Execute o comando `docker-compose up`
 4. Acesse o Swagger em http://localhost:3000/swagger/
+
+## Documentação
+
+### Arquitetura de Aplicação
+
+Architectural Pattern: [Modular Monolith](https://www.milanjovanovic.tech/blog/what-is-a-modular-monolith) + [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/)
+
+![arquitetura-de-aplicacao](https://github.com/user-attachments/assets/48c77bcc-2db1-4827-83a4-fa81a9c59c78)
+
+<details>
+
+<summary>Por que optamos por um Modular Monolith?</summary>
+
+## Modular Monolith
+
+Ao optar por um monolito modular...
+
+</details>
+
+### Arquitetura Cloud
+
+Cloud provider: AWS
+
+![arquitetura-cloud drawio](https://github.com/user-attachments/assets/786abbc1-c27d-4419-a2f8-df2de9c98f34)
+*Clique na imagem para ampliar.*
 
 ## Como contribuir
 
@@ -63,17 +97,6 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Documentação
-
-### Arquitetura da aplicação
-
-![arquitetura-de-aplicacao](https://github.com/user-attachments/assets/48c77bcc-2db1-4827-83a4-fa81a9c59c78)
-
-### Arquitetura cloud
-
-![arquitetura-cloud drawio](https://github.com/user-attachments/assets/786abbc1-c27d-4419-a2f8-df2de9c98f34)
-*Clique na imagem para ampliar.*
 
 ## Métricas de código
 
