@@ -37,9 +37,23 @@ diagnósticos. Para viabilizar o desenvolvimento de um sistema que esteja em con
 
 ### Arquitetura de Aplicação
 
+Architectural Pattern: [Modular Monolith](https://www.milanjovanovic.tech/blog/what-is-a-modular-monolith) + [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/)
+
 ![arquitetura-de-aplicacao](https://github.com/user-attachments/assets/48c77bcc-2db1-4827-83a4-fa81a9c59c78)
 
+<details>
+
+<summary>Por que optamos por um Modular Monolith?</summary>
+
+## Modular Monolith
+
+Ao optar por um monolito modular...
+
+</details>
+
 ### Arquitetura Cloud
+
+Cloud provider: AWS
 
 ![arquitetura-cloud drawio](https://github.com/user-attachments/assets/786abbc1-c27d-4419-a2f8-df2de9c98f34)
 *Clique na imagem para ampliar.*
