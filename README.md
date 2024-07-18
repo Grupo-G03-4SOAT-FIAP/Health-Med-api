@@ -30,7 +30,7 @@ diagnósticos. Para viabilizar o desenvolvimento de um sistema que esteja em con
 
 1. Clone este repositório;
 2. Navegue até a pasta raiz do projeto;
-3. Execute o comando `docker-compose up`
+3. Execute o comando `docker-compose up -d --build --force-recreate`
 4. Acesse o Swagger em http://localhost:3000/swagger/
 
 ## Documentação
