@@ -24,6 +24,7 @@ services:
       PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres
+      - ./scripts:/docker-entrypoint-initdb.d
     restart: always
     networks:
       - default

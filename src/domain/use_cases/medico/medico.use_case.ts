@@ -12,7 +12,7 @@ export class MedicoUseCase implements IMedicoUseCase {
     private readonly medicoRepository: IMedicoRepository,
   ) {}
 
-  async buscaMedico(medicoId: string): Promise<Medico> {
+  async buscarMedico(medicoId: string): Promise<Medico> {
     const medicoModel = await this.medicoRepository.buscarMedicoPorId(medicoId);
     if (!medicoModel) {
       throw new MedicoNaoLocalizado('Médico não localizado');
@@ -29,8 +29,8 @@ export class MedicoUseCase implements IMedicoUseCase {
     return medico;
   }
 
-  async listaMedicos(): Promise<Medico[] | []> {
-    const medicosModel = await this.medicoRepository.listarMedicos();
+  async listarMedicos(): Promise<Medico[] | []> {
+    const medicosModel = await this.medicoRepository.listarMedicosDisponiveis();
     const listamedicos = medicosModel.map((medicoModel: MedicoModel) => {
       const medico = new Medico();
       medico.id = medicoModel.id;

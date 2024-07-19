@@ -16,7 +16,9 @@ export class MedicoRepository implements IMedicoRepository {
       where: { id: medicoId },
     });
   }
-  async listarMedicos(): Promise<MedicoModel[] | []> {
-    return await this.repository.find({});
+  async listarMedicosDisponiveis(): Promise<MedicoModel[] | []> {
+    return await this.repository.find({
+      where: { disponibilidade: true },
+    });
   }
 }

@@ -13,7 +13,7 @@ export class MedicoController {
   @Get('/:id')
   async buscar(@Param('id', ParseUUIDPipe) id: string): Promise<Medico> {
     try {
-      return await this.medicoUseCase.buscaMedico(id);
+      return await this.medicoUseCase.buscarMedico(id);
     } catch (error) {
       if (error instanceof MedicoNaoLocalizado) {
         throw new MedicoNaoLocalizado(error.message);
@@ -25,7 +25,7 @@ export class MedicoController {
   @Get()
   async listar(): Promise<Medico[] | []> {
     try {
-      return await this.medicoUseCase.listaMedicos();
+      return await this.medicoUseCase.listarMedicos();
     } catch (error) {
       throw new Error(`Erro ao listar médicos: ${error}`);
     }
