@@ -1,4 +1,4 @@
-export class Medico {
+export class MedicoDTO {
   id: string;
   nome: string;
   crm: string;

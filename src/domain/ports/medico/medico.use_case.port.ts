@@ -1,8 +1,8 @@
-import { Medico } from 'src/adapters/inbound/rest/v1/presenters/medico';
+import { MedicoDTO } from 'src/adapters/inbound/rest/v1/presenters/medico.dto';
 
 export interface IMedicoUseCase {
-  buscarMedico(medicoId: string): Promise<Medico>;
-  listarMedicos(): Promise<Medico[] | []>;
+  buscarMedico(medicoId: string): Promise<MedicoDTO>;
+  listarMedicos(): Promise<MedicoDTO[] | []>;
 }
 
 export const IMedicoUseCase = Symbol('IMedicoUseCase');

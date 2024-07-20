@@ -1,5 +1,12 @@
-import { Controller, Get, Inject, Param, ParseUUIDPipe } from '@nestjs/common';
-import { Medico } from '../../presenters/medico';
+import {
+  Controller,
+  Get,
+  Inject,
+  NotFoundException,
+  Param,
+  ParseUUIDPipe,
+} from '@nestjs/common';
+import { MedicoDTO } from '../../presenters/medico.dto';
 import { IMedicoUseCase } from 'src/domain/ports/medico/medico.use_case.port';
 import { MedicoNaoLocalizado } from 'src/domain/exceptions/medico.exception';
 
@@ -11,19 +18,19 @@ export class MedicoController {
   ) {}
 
   @Get('/:id')
-  async buscar(@Param('id', ParseUUIDPipe) id: string): Promise<Medico> {
+  async buscar(@Param('id', ParseUUIDPipe) id: string): Promise<MedicoDTO> {
     try {
       return await this.medicoUseCase.buscarMedico(id);
     } catch (error) {
       if (error instanceof MedicoNaoLocalizado) {
-        throw new MedicoNaoLocalizado(error.message);
+        throw new NotFoundException(error.message);
       }
       throw new Error(`Erro ao buscar médico: ${error}`);
     }
   }
 
   @Get()
-  async listar(): Promise<Medico[] | []> {
+  async listar(): Promise<MedicoDTO[] | []> {
     try {
       return await this.medicoUseCase.listarMedicos();
     } catch (error) {

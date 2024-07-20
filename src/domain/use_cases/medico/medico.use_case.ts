@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Medico } from 'src/adapters/inbound/rest/v1/presenters/medico';
+import { MedicoDTO } from 'src/adapters/inbound/rest/v1/presenters/medico.dto';
 import { MedicoModel } from 'src/adapters/outbound/models/medico.model';
 import { MedicoNaoLocalizado } from 'src/domain/exceptions/medico.exception';
 import { IMedicoRepository } from 'src/domain/ports/medico/medico.repository.port';
@@ -12,13 +12,13 @@ export class MedicoUseCase implements IMedicoUseCase {
     private readonly medicoRepository: IMedicoRepository,
   ) {}
 
-  async buscarMedico(medicoId: string): Promise<Medico> {
+  async buscarMedico(medicoId: string): Promise<MedicoDTO> {
     const medicoModel = await this.medicoRepository.buscarMedicoPorId(medicoId);
     if (!medicoModel) {
       throw new MedicoNaoLocalizado('Médico não localizado');
     }
 
-    const medico = new Medico();
+    const medico = new MedicoDTO();
     medico.id = medicoModel.id;
     medico.nome = medicoModel.nome;
     medico.crm = medicoModel.crm;
@@ -29,10 +29,10 @@ export class MedicoUseCase implements IMedicoUseCase {
     return medico;
   }
 
-  async listarMedicos(): Promise<Medico[] | []> {
+  async listarMedicos(): Promise<MedicoDTO[] | []> {
     const medicosModel = await this.medicoRepository.listarMedicosDisponiveis();
     const listamedicos = medicosModel.map((medicoModel: MedicoModel) => {
-      const medico = new Medico();
+      const medico = new MedicoDTO();
       medico.id = medicoModel.id;
       medico.nome = medicoModel.nome;
       medico.crm = medicoModel.crm;
