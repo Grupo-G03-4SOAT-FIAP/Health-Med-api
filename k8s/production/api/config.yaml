@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: health-med-api-config
+  namespace: health-med
+  labels:
+    app: health-med-api
+data:
+  DB_NAME: "pedidos"
+  DB_SSL: "false"
+  URL_API_PAGAMENTOS: "http://rms-api-pagamentos.rms.svc.cluster.local:80/pedido"

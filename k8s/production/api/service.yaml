@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: health-med-api
+  namespace: health-med
+  labels:
+    app: health-med-api
+spec:
+  selector:
+    app: health-med-api
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80 # Porta no Load Balancer
+      targetPort: 3002 # Porta do Pod

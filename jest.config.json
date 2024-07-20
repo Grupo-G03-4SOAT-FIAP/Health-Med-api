@@ -12,9 +12,17 @@
     "collectCoverageFrom": [
         "**/*.(t|j)s"
     ],
+    "coveragePathIgnorePatterns": [
+        "/node_modules/",
+        ".module.ts",
+        "/src/mocks/"
+    ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
     "moduleNameMapper": {
         "^src/(.*)$": "<rootDir>/$1"
-      }
+    },
+    "cache": true,
+    "verbose": false,
+    "testTimeout": 10000 // tempo limite em milissegundos
 }
