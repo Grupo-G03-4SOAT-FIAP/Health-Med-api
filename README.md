@@ -42,7 +42,7 @@ diagnósticos. Para viabilizar o desenvolvimento de um sistema que esteja em con
 6. Execute o comando `docker-compose up -d db-pedidos` para iniciar o container do banco de dados;
 7. Execute o comando `docker-compose up -d localstack` para iniciar o localstack;
 8. Use o comando `npm run start` para iniciar a aplicação.
-9. Acesse o Swagger em http://localhost:3002/swagger/
+9. Acesse o Swagger em http://localhost:3000/swagger/
 
 <details>
 
@@ -54,7 +54,7 @@ diagnósticos. Para viabilizar o desenvolvimento de um sistema que esteja em con
 2. Navegue até a pasta raiz do projeto usando o Terminal;
 3. Faça uma cópia do arquivo `.env.template` com o nome `.env` e preencha as variáveis de ambiente dentro dele;
 4. Execute o comando `docker-compose up -d --build --force-recreate`
-5. Acesse o Swagger em http://localhost:3002/swagger/
+5. Acesse o Swagger em http://localhost:3000/swagger/
 
 </details>
 
@@ -69,7 +69,7 @@ diagnósticos. Para viabilizar o desenvolvimento de um sistema que esteja em con
 3. Use o comando `docker build -t Health-Med-api:latest .` para gerar a imagem de container da aplicação;
 4. Use o comando `kubectl apply -f k8s/development/postgres/namespace.yaml -f k8s/development/postgres/pvc-pv.yaml -f k8s/development/postgres/config.yaml -f k8s/development/postgres/secrets.yaml -f k8s/development/postgres/deployment.yaml -f k8s/development/postgres/service.yaml` para fazer deploy do banco de dados;
 5. Use o comando `kubectl apply -f k8s/development/api/namespace.yaml -f k8s/development/api/config.yaml -f k8s/development/api/secrets.yaml -f k8s/development/api/deployment.yaml -f k8s/development/api/service.yaml -f k8s/development/api/hpa.yaml` para fazer deploy da aplicação;
-6. Acesse o Swagger em http://localhost:3002/swagger/
+6. Acesse o Swagger em http://localhost:3000/swagger/
 
 > Para remover a aplicação do Kubernetes, use o comando `kubectl delete namespace rms`
 
@@ -210,7 +210,7 @@ Para escanear todos os endpoints da API em busca de vulnerabilidades siga o pass
 1. Execute a aplicação usando o Docker Compose;
 2. Execute o comando abaixo:
 ```bash
-docker run --name zap --network host -v $(pwd):/zap/wrk/:rw -t zaproxy/zap-stable zap-api-scan.py -t http://localhost:3002/swagger-json -f openapi -r report.html
+docker run --name zap --network host -v $(pwd):/zap/wrk/:rw -t zaproxy/zap-stable zap-api-scan.py -t http://localhost:3000/swagger-json -f openapi -r report.html
 ```
 
 > Substitua os parenteses em `$(pwd)` por chaves `${pwd}` no Windows.
