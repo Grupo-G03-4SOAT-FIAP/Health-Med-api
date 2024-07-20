@@ -32,10 +32,6 @@ diagnósticos. Para viabilizar o desenvolvimento de um sistema que esteja em con
 ![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
 
-<br>
-
-![overview-microsservicos](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/assets/5115895/8eabc62c-4381-45ce-a101-42883dd1f087)
-
 ## Executar a aplicação
 
 1. Baixe e instale o Node.js em https://nodejs.org/en/download
