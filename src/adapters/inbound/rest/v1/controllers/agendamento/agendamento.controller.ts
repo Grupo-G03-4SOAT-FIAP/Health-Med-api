@@ -12,6 +12,7 @@ import {
 } from '@nestjs/common';
 import { Horarios } from '../../presenters/agendamento';
 import { IAgendamentoUseCase } from 'src/domain/ports/agendamento/agendamento.use_case.port';
+import { Authentication, CognitoUser } from '@nestjs-cognito/auth';
 
 @Controller('agendamento')
 export class AgendamentoController {
@@ -20,8 +21,12 @@ export class AgendamentoController {
     private readonly agendamentoUseCase: IAgendamentoUseCase,
   ) {}
 
+  @Authentication()
   @Post()
-  async create(@Body() horario: any): Promise<any> {
+  async create(
+    @CognitoUser('medicoID') medicoID: string,
+    @Body() horario: any,
+  ): Promise<any> {
     console.log(horario);
     try {
       const novoHorario = await this.agendamentoUseCase.create(horario);

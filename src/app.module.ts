@@ -1,6 +1,6 @@
 import { IAgendamentoRepository } from 'src/domain/ports/agendamento/agendamento.repository.port';
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { HttpModule } from '@nestjs/axios';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppUseCase } from './domain/use_cases/app/app.use_case';
@@ -17,6 +17,7 @@ import { IAgendamentoUseCase } from './domain/ports/agendamento/agendamento.use_
 import { AgendamentoRepository } from './adapters/outbound/repositories/agendamento.repository';
 import { AgendamentoController } from './adapters/inbound/rest/v1/controllers/agendamento/agendamento.controller';
 import { AgendamentoModel } from './adapters/outbound/models/agendamento.model';
+import { CognitoAuthModule } from '@nestjs-cognito/auth';
 
 @Module({
   imports: [
@@ -28,6 +29,35 @@ import { AgendamentoModel } from './adapters/outbound/models/agendamento.model';
     TypeOrmModule.forRootAsync({
       useClass: PostgresConfigService,
       inject: [PostgresConfigService],
+    }),
+    CognitoAuthModule.registerAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => {
+        const pacientePoolID = configService.get<string>(
+          'COGNITO_USER_POOL_ID_1',
+        );
+        const pacienteID = configService.get<string>('COGNITO_CLIENT_ID_1');
+        const medicoPoolID = configService.get<string>(
+          'COGNITO_USER_POOL_ID_2',
+        );
+        const medicoID = configService.get<string>('COGNITO_CLIENT_ID_2');
+
+        return {
+          jwtVerifier: [
+            {
+              userPoolId: pacientePoolID,
+              clientId: pacienteID,
+              tokenUse: 'id',
+            },
+            {
+              userPoolId: medicoPoolID,
+              clientId: medicoID,
+              tokenUse: 'id',
+            },
+          ],
+        };
+      },
+      inject: [ConfigService],
     }),
   ],
   controllers: [AppController, MedicoController, AgendamentoController],
