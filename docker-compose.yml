@@ -1,0 +1,60 @@
+services:
+  db:
+    container_name: db
+    hostname: db
+    image: postgres
+    ports:
+      - '5432:5432'
+    expose:
+      - 5432
+    healthcheck:
+      test: ['CMD', 'pg_isready -U ${DB_USERNAME:-pguser} -d ${DB_NAME:-health_med}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${DB_USERNAME:-pguser}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-pgpwd}
+      POSTGRES_DB: ${DB_NAME:-health_med}
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+      - ./scripts:/docker-entrypoint-initdb.d
+    restart: always
+    networks:
+      - default
+
+  api:
+    container_name: api
+    hostname: api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    expose:
+      - 3000
+    env_file:
+      - .env
+    environment:
+      DB_HOST: ${DB_USERNAME:-db}
+      DB_PORT: ${DB_USERNAME:-5432}
+      DB_USER: ${DB_USERNAME:-pguser}
+      DB_PASSWORD: ${DB_PASSWORD:-pgpwd}
+      DB_NAME: ${DB_NAME:-health_med}
+      DB_SSL=: ${DB_SSL:-false}
+    restart: always
+    networks:
+      - default
+    depends_on:
+      - db
+
+networks:
+  default:
+    driver: bridge
+
+volumes:
+  postgres:
