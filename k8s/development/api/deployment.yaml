@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: health-med-api
+  namespace: health-med
+  labels:
+    app: health-med-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: health-med-api
+  template:
+    metadata:
+      labels:
+        app: health-med-api
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: health-med-api
+          image: health-med-api:latest # No Kubernetes do Docker Desktop a imagem deve já estar presente no cache de imagens do Docker na máquina local
+          imagePullPolicy: IfNotPresent # Necessário definir "IfNotPresent" ao utilizar o Kubernetes do Docker Desktop para evitar erros "ImagePullBackOff" ao criar os Pods
+          envFrom:
+            - configMapRef:
+                name: health-med-api-config
+          env:
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: health-med-api-secret
+                  key: DB_USERNAME
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: health-med-api-secret
+                  key: DB_PASSWORD
+            - name: ACCESS_TOKEN_MERCADOPAGO
+              valueFrom:
+                secretKeyRef:
+                  name: health-med-api-secret
+                  key: ACCESS_TOKEN_MERCADOPAGO
+          ports:
+            - containerPort: 3002
+          resources:
+            # You must specify requests for CPU to autoscale
+            # based on CPU utilization
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+            limits:
+              cpu: "0.5"
+              memory: "1Gi"
+              ephemeral-storage: "2Gi"

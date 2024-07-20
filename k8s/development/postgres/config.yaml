@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+  namespace: health-med
+  labels:
+    app: postgres
+data:
+  POSTGRES_DB: rms

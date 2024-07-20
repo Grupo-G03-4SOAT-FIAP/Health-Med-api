@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: health-med-api-config
+  namespace: health-med
+  labels:
+    app: health-med-api
+data:
+  DB_NAME: "rms"
+  DB_SSL: "false"
+  ENABLE_MERCADOPAGO: "false"
+  IDEMPOTENCY_KEY_MERCADOPAGO: "a005986e-f97c-4274-91cf-b32d2672824f"
+  NOME_FILA_NOVA_COBRANCA: nova-cobranca
+  URL_FILA_NOVA_COBRANCA: 
+  REGION_FILA_NOVA_COBRANCA: us-east-1

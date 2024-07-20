@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres # Sets service name
+  namespace: health-med
+  labels:
+    app: postgres # Labels and Selectors
+spec:
+  #type: NodePort # Sets service type
+  type: LoadBalancer # Sets service type # O type "LoadBalancer" torna o service acessível fora do cluster, em localhost, no Kubernetes do Docker Desktop
+  ports:
+    - port: 5432 # Sets port to run the postgres application
+  selector:
+    app: postgres
