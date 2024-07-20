@@ -221,7 +221,7 @@ O report em formato HTML será gerado no diretório atual.
 
 </details>
 
-## Relatório de Impacto à Proteção de Dados Pessoais (RIPD)🔒
+## Relatório de Impacto à Proteção de Dados Pessoais (RIPD)
 
 O Relatório de Impacto à Proteção de Dados Pessoais (RIPD) está disponível na pasta `/docs/RIPD`\
 [Clique aqui para acessar](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/tree/main/docs/RPID)↗️
