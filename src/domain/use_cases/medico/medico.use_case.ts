@@ -1,5 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { MedicoDTO } from 'src/adapters/inbound/rest/v1/presenters/medico.dto';
+import {
+  FiltrosMedicoDTO,
+  MedicoDTO,
+} from 'src/adapters/inbound/rest/v1/presenters/medico.dto';
 import { MedicoModel } from 'src/adapters/outbound/models/medico.model';
 import { MedicoNaoLocalizado } from 'src/domain/exceptions/medico.exception';
 import { IMedicoRepository } from 'src/domain/ports/medico/medico.repository.port';
@@ -29,8 +32,9 @@ export class MedicoUseCase implements IMedicoUseCase {
     return medico;
   }
 
-  async listarMedicos(): Promise<MedicoDTO[] | []> {
-    const medicosModel = await this.medicoRepository.listarMedicosDisponiveis();
+  async listarMedicos(filtros: FiltrosMedicoDTO): Promise<MedicoDTO[] | []> {
+    const medicosModel =
+      await this.medicoRepository.listarMedicosDisponiveis(filtros);
     const listamedicos = medicosModel.map((medicoModel: MedicoModel) => {
       const medico = new MedicoDTO();
       medico.id = medicoModel.id;

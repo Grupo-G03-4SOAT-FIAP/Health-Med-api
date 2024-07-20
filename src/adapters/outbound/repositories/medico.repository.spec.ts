@@ -7,6 +7,7 @@ import { MedicoModel } from '../models/medico.model';
 describe('MedicoRepository', () => {
   let medicoRepository: MedicoRepository;
   let medicoId: string;
+  let filtros: any;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -21,6 +22,11 @@ describe('MedicoRepository', () => {
 
     medicoRepository = module.get<MedicoRepository>(MedicoRepository);
     medicoId = '87299678-a39f-46ff-a849-79c35f561945';
+    filtros = {
+      especialidade: 'Cardiologista',
+      avaliacao: 4,
+      distancia: 10,
+    };
   });
 
   afterEach(() => {
@@ -31,10 +37,10 @@ describe('MedicoRepository', () => {
     const listaMedicos = [medicoModelMock, medicoModelMock, medicoModelMock];
     medicoTypeORMMock.find.mockResolvedValue(Promise.resolve(listaMedicos));
 
-    const result = await medicoRepository.listarMedicosDisponiveis();
+    const result = await medicoRepository.listarMedicosDisponiveis(filtros);
 
     expect(medicoTypeORMMock.find).toHaveBeenCalledWith({
-      where: { disponibilidade: true },
+      where: { disponibilidade: true, ...filtros },
     });
     expect(result).toBe(listaMedicos);
   });
@@ -43,10 +49,10 @@ describe('MedicoRepository', () => {
     const listaMedicos = [];
     medicoTypeORMMock.find.mockResolvedValue(Promise.resolve(listaMedicos));
 
-    const result = await medicoRepository.listarMedicosDisponiveis();
+    const result = await medicoRepository.listarMedicosDisponiveis(filtros);
 
     expect(medicoTypeORMMock.find).toHaveBeenCalledWith({
-      where: { disponibilidade: true },
+      where: { disponibilidade: true, ...filtros },
     });
     expect(result).toBe(listaMedicos);
   });

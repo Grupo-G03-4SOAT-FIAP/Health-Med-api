@@ -8,6 +8,7 @@ import { NotFoundException } from '@nestjs/common';
 describe('MedicoController', () => {
   let medicoController: MedicoController;
   let medicoId: string;
+  let filtros: any;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -22,6 +23,11 @@ describe('MedicoController', () => {
 
     medicoController = module.get<MedicoController>(MedicoController);
     medicoId = '87299678-a39f-46ff-a849-79c35f561945';
+    filtros = {
+      especialidade: 'Cardiologista',
+      avaliacao: 4,
+      distancia: 10,
+    };
   });
 
   afterEach(() => {
@@ -31,18 +37,18 @@ describe('MedicoController', () => {
   it('deve listar medicos', async () => {
     medicoUseCaseMock.listarMedicos.mockReturnValue([medicoDTOMock]);
 
-    const result = await medicoController.listar();
+    const result = await medicoController.listar(filtros);
 
-    expect(medicoUseCaseMock.listarMedicos).toHaveBeenCalledWith();
+    expect(medicoUseCaseMock.listarMedicos).toHaveBeenCalledWith(filtros);
     expect(result).toStrictEqual([medicoDTOMock]);
   });
 
   it('deve listar medicos vazio', async () => {
     medicoUseCaseMock.listarMedicos.mockReturnValue([]);
 
-    const result = await medicoController.listar();
+    const result = await medicoController.listar(filtros);
 
-    expect(medicoUseCaseMock.listarMedicos).toHaveBeenCalledWith();
+    expect(medicoUseCaseMock.listarMedicos).toHaveBeenCalledWith(filtros);
     expect(result).toStrictEqual([]);
   });
 

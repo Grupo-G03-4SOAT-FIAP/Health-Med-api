@@ -11,6 +11,7 @@ import { IMedicoRepository } from 'src/domain/ports/medico/medico.repository.por
 describe('MedicoUseCase', () => {
   let medicoUseCase: MedicoUseCase;
   let medicoId: string;
+  let filtros: any;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -25,6 +26,11 @@ describe('MedicoUseCase', () => {
 
     medicoUseCase = module.get<MedicoUseCase>(MedicoUseCase);
     medicoId = '87299678-a39f-46ff-a849-79c35f561945';
+    filtros = {
+      especialidade: 'Cardiologista',
+      avaliacao: 4,
+      distancia: 10,
+    };
   });
 
   afterEach(() => {
@@ -36,7 +42,7 @@ describe('MedicoUseCase', () => {
       medicoModelMock,
     ]);
 
-    const result = await medicoUseCase.listarMedicos();
+    const result = await medicoUseCase.listarMedicos(filtros);
 
     expect(medicoRepositoryMock.listarMedicosDisponiveis).toHaveBeenCalled();
     expect(result).toStrictEqual([medicoDTOMock]);
@@ -45,7 +51,7 @@ describe('MedicoUseCase', () => {
   it('deve listar medicos vazio', async () => {
     medicoRepositoryMock.listarMedicosDisponiveis.mockReturnValue([]);
 
-    const result = await medicoUseCase.listarMedicos();
+    const result = await medicoUseCase.listarMedicos(filtros);
 
     expect(medicoRepositoryMock.listarMedicosDisponiveis).toHaveBeenCalled();
     expect(result).toStrictEqual([]);

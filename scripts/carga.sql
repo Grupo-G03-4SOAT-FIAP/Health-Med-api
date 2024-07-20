@@ -10,9 +10,9 @@ CREATE TABLE IF NOT EXISTS medicos (
 
 INSERT INTO medicos values (
     '06f46f66-9f2e-4a27-976c-fa785936a765',
-    'ARAO ANDRADE NAPOLEAO LIMA',
+    'Arao Andrade Napoleao Lima',
     '194528-SP',
-    'DERMATOLOGIA',
+    'dermatologia',
     9,
     10,
     true
@@ -20,9 +20,9 @@ INSERT INTO medicos values (
 
 INSERT INTO medicos values (
     '6bf977c6-f120-473d-8f00-97e2b5f8b18a',
-    'ARON DA COSTA TELLES',
+    'Aron da Costa Telles',
     '202768-SP',
-    'ANESTESIOLOGIA',
+    'anestesiologia',
     8,
     5,
     true
@@ -30,9 +30,9 @@ INSERT INTO medicos values (
 
 INSERT INTO medicos values (
     '87299678-a39f-46ff-a849-79c35f561945',
-    'BRUNO LOPES DOS SANTOS',
+    'Bruno Lopes dos Santos',
     '127670-SP',
-    'NEUROLOGIA',
+    'neurologia',
     5,
     2,
     true
@@ -40,9 +40,9 @@ INSERT INTO medicos values (
 
 INSERT INTO medicos values (
     '3fb50be0-b77b-4f9f-8288-adcccb79a234',
-    'JARBAS CAMARGO BARBOSA DE BARROS',
+    'Jarbas Camargo Barbosa de Barros',
     '2364-SP',
-    'UROLOGIA',
+    'urologia',
     7,
     30,
     true
@@ -50,9 +50,9 @@ INSERT INTO medicos values (
 
 INSERT INTO medicos values (
     '107622f8-3f6a-4506-b863-5a8740a94f8f',
-    'JOSE FRANCISCO GONCALVES FILHO',
+    'Jose Francisco Goncalves Filho',
     '42296-SP',
-    'GINECOLOGIA E OBSTETRÍCIA',
+    'ginecologia',
     3,
     15,
     false

@@ -3,6 +3,7 @@ import { IMedicoRepository } from 'src/domain/ports/medico/medico.repository.por
 import { MedicoModel } from '../models/medico.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { FiltrosMedicoDTO } from 'src/adapters/inbound/rest/v1/presenters/medico.dto';
 
 @Injectable()
 export class MedicoRepository implements IMedicoRepository {
@@ -16,9 +17,11 @@ export class MedicoRepository implements IMedicoRepository {
       where: { id: medicoId },
     });
   }
-  async listarMedicosDisponiveis(): Promise<MedicoModel[] | []> {
+  async listarMedicosDisponiveis(
+    filtros: FiltrosMedicoDTO,
+  ): Promise<MedicoModel[] | []> {
     return await this.repository.find({
-      where: { disponibilidade: true },
+      where: { disponibilidade: true, ...filtros },
     });
   }
 }

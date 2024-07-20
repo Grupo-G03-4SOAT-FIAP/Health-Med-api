@@ -4,9 +4,10 @@ import {
   Inject,
   NotFoundException,
   Param,
+  Query,
   ParseUUIDPipe,
 } from '@nestjs/common';
-import { MedicoDTO } from '../../presenters/medico.dto';
+import { FiltrosMedicoDTO, MedicoDTO } from '../../presenters/medico.dto';
 import { IMedicoUseCase } from 'src/domain/ports/medico/medico.use_case.port';
 import { MedicoNaoLocalizado } from 'src/domain/exceptions/medico.exception';
 
@@ -30,11 +31,11 @@ export class MedicoController {
   }
 
   @Get()
-  async listar(): Promise<MedicoDTO[] | []> {
+  async listar(@Query() filtros: FiltrosMedicoDTO): Promise<MedicoDTO[] | []> {
     try {
-      return await this.medicoUseCase.listarMedicos();
+      return await this.medicoUseCase.listarMedicos(filtros);
     } catch (error) {
-      throw new Error(`Erro ao listar médicos: ${error}`);
+      throw new Error(`Erro ao filtrar médicos: ${error}`);
     }
   }
 }
