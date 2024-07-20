@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('agendamento')
+@Entity('horario')
 export class AgendamentoModel {
   @PrimaryGeneratedColumn('uuid')
   id: string;
