@@ -141,7 +141,7 @@ spec:
                   name: sqs-fila-falha-pagamento-secret
                   key: REGION_FILA_FALHA_PAGAMENTO
           ports:
-            - containerPort: 3002
+            - containerPort: 3000
           resources:
             # You must specify requests for CPU to autoscale
             # based on CPU utilization

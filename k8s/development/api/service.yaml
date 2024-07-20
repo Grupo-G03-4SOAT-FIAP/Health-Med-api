@@ -11,5 +11,5 @@ spec:
   type: LoadBalancer # O type "LoadBalancer" torna o service acessível fora do cluster, em localhost, no Kubernetes do Docker Desktop
   ports:
     - protocol: TCP
-      port: 3002 # Porta na máquina local
-      targetPort: 3002 # Porta do Pod
+      port: 3000 # Porta na máquina local
+      targetPort: 3000 # Porta do Pod
