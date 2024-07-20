@@ -1,3 +1,4 @@
+import { IAgendamentoRepository } from 'src/domain/ports/agendamento/agendamento.repository.port';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { HttpModule } from '@nestjs/axios';
@@ -11,11 +12,16 @@ import { PostgresConfigService } from './adapters/outbound/database/postgres.con
 import { IMedicoUseCase } from './domain/ports/medico/medico.use_case.port';
 import { IMedicoRepository } from './domain/ports/medico/medico.repository.port';
 import { MedicoRepository } from './adapters/outbound/repositories/medico.repository';
+import { AgendamentoUseCase } from './domain/use_cases/agendamento/agendamento.use_case';
+import { IAgendamentoUseCase } from './domain/ports/agendamento/agendamento.use_case.port';
+import { AgendamentoRepository } from './adapters/outbound/repositories/agendamento.repository';
+import { AgendamentoController } from './adapters/inbound/rest/v1/controllers/agendamento/agendamento.controller';
+import { AgendamentoModel } from './adapters/outbound/models/agendamento.model';
 
 @Module({
   imports: [
     HttpModule,
-    TypeOrmModule.forFeature([MedicoModel]),
+    TypeOrmModule.forFeature([MedicoModel, AgendamentoModel]),
     ConfigModule.forRoot({
       isGlobal: true,
     }),
@@ -24,10 +30,11 @@ import { MedicoRepository } from './adapters/outbound/repositories/medico.reposi
       inject: [PostgresConfigService],
     }),
   ],
-  controllers: [AppController, MedicoController],
+  controllers: [AppController, MedicoController, AgendamentoController],
   providers: [
     AppUseCase,
     MedicoUseCase,
+    AgendamentoUseCase,
     {
       provide: IMedicoUseCase,
       useClass: MedicoUseCase,
@@ -35,6 +42,14 @@ import { MedicoRepository } from './adapters/outbound/repositories/medico.reposi
     {
       provide: IMedicoRepository,
       useClass: MedicoRepository,
+    },
+    {
+      provide: IAgendamentoUseCase,
+      useClass: AgendamentoUseCase,
+    },
+    {
+      provide: IAgendamentoRepository,
+      useClass: AgendamentoRepository,
     },
   ],
 })
