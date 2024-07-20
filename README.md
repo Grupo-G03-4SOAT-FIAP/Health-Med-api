@@ -227,6 +227,6 @@ O report em formato HTML será gerado no diretório atual.
 
 ## Requisitos
 
-*Node.js v20.12.0 (LTS), Docker Desktop 24.0.6 e Kubernetes v1.28*\
+*Node.js v20.12.0 (LTS), Docker Desktop 24.0.6 e Kubernetes v1.28*
 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=Grupo-G03-4SOAT-FIAP_Health-Med-api)
