@@ -66,7 +66,7 @@ diagnósticos. Para viabilizar o desenvolvimento de um sistema que esteja em con
 
 1. Clone este repositório;
 2. Navegue até a pasta raiz do projeto usando o Terminal;
-3. Use o comando `docker build -t Health-Med-api:latest .` para gerar a imagem de container da aplicação;
+3. Use o comando `docker build -t health-med-api:latest .` para gerar a imagem de container da aplicação;
 4. Use o comando `kubectl apply -f k8s/development/postgres/namespace.yaml -f k8s/development/postgres/pvc-pv.yaml -f k8s/development/postgres/config.yaml -f k8s/development/postgres/secrets.yaml -f k8s/development/postgres/deployment.yaml -f k8s/development/postgres/service.yaml` para fazer deploy do banco de dados;
 5. Use o comando `kubectl apply -f k8s/development/api/namespace.yaml -f k8s/development/api/config.yaml -f k8s/development/api/secrets.yaml -f k8s/development/api/deployment.yaml -f k8s/development/api/service.yaml -f k8s/development/api/hpa.yaml` para fazer deploy da aplicação;
 6. Acesse o Swagger em http://localhost:3000/swagger/
@@ -95,7 +95,7 @@ Para testar o agendamento de consultas com o Google Meet siga o passo a passo di
 
 ## Banco de Dados
 
-Entendemos que o modelo relacional é o que mais se adequa ao nosso problema de negócio, contexto atual e requisitos na API da Health&Med. Leia mais sobre as motivações para adoção do modelo relacional no [Architectural Decision Record (ADR)](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-Banco-de-Dados-da-API-RMS).
+Entendemos que o modelo relacional é o que mais se adequa ao nosso problema de negócio, contexto atual e requisitos na API da Health&Med. Leia mais sobre as motivações para adoção do modelo relacional no [Architectural Decision Record (ADR)](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-Banco-de-Dados-da-Health&Med).
 
 <details>
 
@@ -109,7 +109,7 @@ Você pode conectar-se a instância de banco de dados PostgreSQL usando o [pgAdm
 > Porta: 5432 (padrão)\
 > Usuário: pguser\
 > Senha: pgpwd\
-> DB name: rms
+> DB name: health_med
 
 </details>
 
