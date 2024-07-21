@@ -12,6 +12,7 @@ import {
 } from '@nestjs/common';
 import { Horarios } from '../../presenters/agenda.dto';
 import { IAgendaUseCase } from 'src/domain/ports/agendamento/agenda.use_case.port';
+import { Authorization, CognitoUser } from '@nestjs-cognito/auth';
 
 @Controller('agenda')
 export class AgendaController {
@@ -21,8 +22,14 @@ export class AgendaController {
   ) {}
 
   @Post()
-  async criar(@Body() horario: any): Promise<any> {
+  @Authorization(['medicos'])
+  async criar(
+    @CognitoUser('sub') sub: string,
+    @Body() horario: any,
+  ): Promise<any> {
     try {
+      const medicoId = sub;
+      horario.medicoId = medicoId;
       return await this.agendaUseCase.criarAgenda(horario);
     } catch (error) {
       throw new BadRequestException(error.message);
@@ -35,11 +42,13 @@ export class AgendaController {
   }
 
   @Put(':id')
-  atualizar(@Param('id') id: string, @Body() horario: Horarios): Promise<void> {
+  @Authorization(['medicos'])
+  atualizar(@Param('id') id: string, @Body() horario: any): Promise<void> {
     return this.agendaUseCase.editarAgenda(id, horario);
   }
 
   @Delete(':id')
+  @Authorization(['medicos'])
   remover(@Param('id') id: string): Promise<void> {
     return this.agendaUseCase.excluirAgenda(id);
   }
