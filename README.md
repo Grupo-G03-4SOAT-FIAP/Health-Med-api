@@ -66,7 +66,7 @@ diagnósticos. Para viabilizar o desenvolvimento de um sistema que esteja em con
 
 1. Clone este repositório;
 2. Navegue até a pasta raiz do projeto usando o Terminal;
-3. Use o comando `docker build -t Health-Med-api:latest .` para gerar a imagem de container da aplicação;
+3. Use o comando `docker build -t health-med-api:latest .` para gerar a imagem de container da aplicação;
 4. Use o comando `kubectl apply -f k8s/development/postgres/namespace.yaml -f k8s/development/postgres/pvc-pv.yaml -f k8s/development/postgres/config.yaml -f k8s/development/postgres/secrets.yaml -f k8s/development/postgres/deployment.yaml -f k8s/development/postgres/service.yaml` para fazer deploy do banco de dados;
 5. Use o comando `kubectl apply -f k8s/development/api/namespace.yaml -f k8s/development/api/config.yaml -f k8s/development/api/secrets.yaml -f k8s/development/api/deployment.yaml -f k8s/development/api/service.yaml -f k8s/development/api/hpa.yaml` para fazer deploy da aplicação;
 6. Acesse o Swagger em http://localhost:3000/swagger/
