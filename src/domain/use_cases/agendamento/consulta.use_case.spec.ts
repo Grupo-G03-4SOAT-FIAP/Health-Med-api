@@ -10,7 +10,6 @@ import { consultaModelMock } from 'src/mocks/consulta.mock';
 
 describe('ConsultaUseCase', () => {
   let consultaUseCase: ConsultaUseCase;
-  let novaConsultaEntity: ConsultaEntity;
 
   beforeEach(async () => {
 
