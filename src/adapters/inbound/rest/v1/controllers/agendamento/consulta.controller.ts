@@ -10,12 +10,9 @@ import {
 } from '@nestjs/common';
 import { IConsultaUseCase } from 'src/domain/ports/agendamento/consulta.use_case.port';
 import { ConsultaDTO, AgendarConsultaDTO } from '../../presenters/consulta.dto';
-<<<<<<< HEAD
 import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
 import { ConsultaStatusInvalido } from 'src/domain/exceptions/consulta.exception';
-=======
 import { Authorization, CognitoUser } from '@nestjs-cognito/auth';
->>>>>>> origin/main
 
 @Controller('consulta')
 export class ConsultaController {
