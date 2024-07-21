@@ -23,7 +23,7 @@ export class AgendaController {
   @Post()
   async criar(@Body() horario: any): Promise<any> {
     try {
-      return await this.agendaUseCase.criarAgenda(horario);;
+      return await this.agendaUseCase.criarAgenda(horario);
     } catch (error) {
       throw new BadRequestException(error.message);
     }
