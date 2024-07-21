@@ -3,7 +3,7 @@ GET http://localhost:3002/health
 
 ##################################################
 
-@CognitoClientId=<Coloque o Client ID do Congito aqui>
+@CognitoClientId=<Coloque o Client ID do Cognito aqui>
 # Para provisionar o Cognito na AWS clone o repositório Health-Med-iac e siga as instruções no README
 
 ### Fazer login de paciente
