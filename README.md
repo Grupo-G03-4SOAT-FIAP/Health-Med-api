@@ -109,7 +109,7 @@ Você pode conectar-se a instância de banco de dados PostgreSQL usando o [pgAdm
 > Porta: 5432 (padrão)\
 > Usuário: pguser\
 > Senha: pgpwd\
-> DB name: rms
+> DB name: health_med
 
 </details>
 
