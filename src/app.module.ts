@@ -1,6 +1,6 @@
 import { IAgendaRepository } from 'src/domain/ports/agendamento/agenda.repository.port';
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { HttpModule } from '@nestjs/axios';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppUseCase } from './domain/use_cases/app/app.use_case';
@@ -23,6 +23,7 @@ import { IConsultaRepository } from './domain/ports/agendamento/consulta.reposit
 import { ConsultaRepository } from './adapters/outbound/repositories/consulta.repository';
 import { ConsultaModel } from './adapters/outbound/models/consulta.model';
 import { IConsultaUseCase } from './domain/ports/agendamento/consulta.use_case.port';
+import { CognitoAuthModule } from '@nestjs-cognito/auth';
 
 @Module({
   imports: [
@@ -34,6 +35,19 @@ import { IConsultaUseCase } from './domain/ports/agendamento/consulta.use_case.p
     TypeOrmModule.forRootAsync({
       useClass: PostgresConfigService,
       inject: [PostgresConfigService],
+    }),
+    CognitoAuthModule.registerAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        jwtVerifier: {
+          userPoolId: configService.getOrThrow(
+            'COGNITO_USER_POOL_ID',
+          ) as string,
+          clientId: configService.getOrThrow('COGNITO_CLIENT_ID'),
+          tokenUse: 'id',
+        },
+      }),
+      inject: [ConfigService],
     }),
   ],
   controllers: [
