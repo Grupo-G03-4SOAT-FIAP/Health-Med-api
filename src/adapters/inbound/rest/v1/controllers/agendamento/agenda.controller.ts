@@ -19,16 +19,16 @@ export class AgendaController {
   constructor(
     @Inject(IAgendaUseCase)
     private readonly agendaUseCase: IAgendaUseCase,
-  ) {}
+  ) { }
 
   @Post()
   @Authorization(['medicos'])
   async criar(
-    @CognitoUser('custom:id') id: string,
+    @CognitoUser('custom:id') customId: string,
     @Body() horario: any,
   ): Promise<any> {
     try {
-      horario.medicoId = id;
+      horario.medicoId = customId;
       return await this.agendaUseCase.criarAgenda(horario);
     } catch (error) {
       throw new BadRequestException(error.message);
@@ -42,7 +42,11 @@ export class AgendaController {
 
   @Put(':id')
   @Authorization(['medicos'])
-  atualizar(@Param('id') id: string, @Body() horario: any): Promise<void> {
+  atualizar(
+    @CognitoUser('custom:id') customId: string,
+    @Param('id') id: string,
+    @Body() horario: any): Promise<void> {
+    horario.medicoId = customId;
     return this.agendaUseCase.editarAgenda(id, horario);
   }
 
