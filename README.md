@@ -39,7 +39,7 @@ diagnósticos. Para viabilizar o desenvolvimento de um sistema que esteja em con
 3. Navegue até a pasta raiz do projeto usando o Terminal;
 4. Faça uma cópia do arquivo `.env.template` com o nome `.env` e preencha as variáveis de ambiente dentro dele;
 5. Execute o comando `npm install` para instalar os pacotes npm;
-6. Execute o comando `docker-compose up -d db-pedidos` para iniciar o container do banco de dados;
+6. Execute o comando `docker-compose up -d db` para iniciar o container do banco de dados;
 7. Execute o comando `docker-compose up -d localstack` para iniciar o localstack;
 8. Use o comando `npm run start` para iniciar a aplicação.
 9. Acesse o Swagger em http://localhost:3000/swagger/
@@ -95,7 +95,7 @@ Para testar o agendamento de consultas com o Google Meet siga o passo a passo di
 
 ## Banco de Dados
 
-Entendemos que o modelo relacional é o que mais se adequa ao nosso problema de negócio, contexto atual e requisitos no Microsserviço de Pedidos. Leia mais sobre as motivações para adoção do modelo relacional no [Architectural Decision Record (ADR)](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-Banco-de-Dados-da-API-RMS).
+Entendemos que o modelo relacional é o que mais se adequa ao nosso problema de negócio, contexto atual e requisitos na API da Health&Med. Leia mais sobre as motivações para adoção do modelo relacional no [Architectural Decision Record (ADR)](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-Banco-de-Dados-da-Health&Med).
 
 <details>
 
