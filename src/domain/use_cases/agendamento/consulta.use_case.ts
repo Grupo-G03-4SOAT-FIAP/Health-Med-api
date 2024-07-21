@@ -51,16 +51,22 @@ export class ConsultaUseCase implements IConsultaUseCase {
     consultaDTO.emailPaciente = consultaModel.emailPaciente;
     consultaDTO.status = consultaModel.statusConsulta;
 
-    return consultaDTO
+    return consultaDTO;
   }
 
-  async stautsConsulta(consultaId: string, status: StatusConsulta): Promise<ConsultaDTO> {
-    const consulta = await this.consultaRepository.buscarConsultaPorId(consultaId);
+  async stautsConsulta(
+    consultaId: string,
+    status: StatusConsulta,
+  ): Promise<ConsultaDTO> {
+    const consulta =
+      await this.consultaRepository.buscarConsultaPorId(consultaId);
     if (!consulta) {
       throw new ConsultaNaoLocalizada('Consulta não localizado');
     }
-    const consultaModel =
-      await this.consultaRepository.statusConsulta(consultaId, status);
+    const consultaModel = await this.consultaRepository.statusConsulta(
+      consultaId,
+      status,
+    );
 
     const consultaDTO = new ConsultaDTO();
     consultaDTO.id = consultaModel.id;
@@ -71,5 +77,5 @@ export class ConsultaUseCase implements IConsultaUseCase {
     consultaDTO.status = consultaModel.statusConsulta;
 
     return consultaDTO;
-  };
+  }
 }

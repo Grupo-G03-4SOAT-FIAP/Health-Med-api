@@ -2,7 +2,10 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { Test, TestingModule } from '@nestjs/testing';
 import { ConsultaRepository } from './consulta.repository';
 import { ConsultaModel } from '../models/consulta.model';
-import { consultaModelMock, consultaTypeORMMock } from 'src/mocks/consulta.mock';
+import {
+  consultaModelMock,
+  consultaTypeORMMock,
+} from 'src/mocks/consulta.mock';
 import { ConsultaEntity } from 'src/domain/entities/consulta.entity';
 import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
 
@@ -53,11 +56,17 @@ describe('ConsultaRepository', () => {
   });
 
   it('deve cancelar consulta por ID', async () => {
-    const consultaCanceladaMock = { ...consultaModelMock, statusConsulta: StatusConsulta.CANCELADA };
+    const consultaCanceladaMock = {
+      ...consultaModelMock,
+      statusConsulta: StatusConsulta.CANCELADA,
+    };
     consultaTypeORMMock.update.mockResolvedValue(Promise.resolve());
     consultaTypeORMMock.findOne.mockResolvedValue(consultaCanceladaMock);
 
-    const result = await consultaRepository.statusConsulta(consultaId, StatusConsulta.CANCELADA);
+    const result = await consultaRepository.statusConsulta(
+      consultaId,
+      StatusConsulta.CANCELADA,
+    );
 
     expect(consultaTypeORMMock.update).toHaveBeenCalledWith(consultaId, {
       statusConsulta: StatusConsulta.CANCELADA,

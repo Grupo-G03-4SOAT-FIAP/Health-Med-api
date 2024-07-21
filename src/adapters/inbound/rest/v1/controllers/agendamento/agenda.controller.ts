@@ -19,7 +19,7 @@ export class AgendaController {
   constructor(
     @Inject(IAgendaUseCase)
     private readonly agendaUseCase: IAgendaUseCase,
-  ) { }
+  ) {}
 
   @Post()
   @Authorization(['medicos'])
@@ -45,7 +45,8 @@ export class AgendaController {
   atualizar(
     @CognitoUser('custom:id') customId: string,
     @Param('id') id: string,
-    @Body() horario: any): Promise<void> {
+    @Body() horario: any,
+  ): Promise<void> {
     horario.medicoId = customId;
     return this.agendaUseCase.editarAgenda(id, horario);
   }
