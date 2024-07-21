@@ -8,10 +8,10 @@ export class ConsultaController {
   constructor(
     @Inject(IConsultaUseCase)
     private readonly consultaUseCase: IConsultaUseCase,
-  ) { }
+  ) {}
 
   @Post()
-  @Authorization(["pacientes"])
+  @Authorization(['pacientes'])
   async criar(
     @CognitoUser('username') username: string,
     @CognitoUser('name') name: string,
