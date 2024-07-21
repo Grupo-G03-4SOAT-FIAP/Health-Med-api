@@ -8,6 +8,7 @@ export class MedicoDTO {
   especialidade: string;
   avaliacao: number;
   distancia: number;
+  valorConsulta: number;
 }
 
 export class FiltrosMedicoDTO {
@@ -22,7 +23,7 @@ export class FiltrosMedicoDTO {
   @IsNumber()
   @Min(0)
   @Transform(({ value }) => {
-    const parsed = parseFloat(value);
+    const parsed = Number(value);
     return isNaN(parsed) ? value : parsed;
   })
   distancia?: number; // km
@@ -30,7 +31,7 @@ export class FiltrosMedicoDTO {
   @IsOptional()
   @IsNumber()
   @Transform(({ value }) => {
-    const parsed = parseFloat(value);
+    const parsed = Number(value);
     return isNaN(parsed) ? value : parsed;
   })
   avaliacao?: number;

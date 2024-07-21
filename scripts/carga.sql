@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS medicos (
     especialidade VARCHAR(100) NOT NULL,
     avaliacao INT NOT NULL,
     distancia INT NOT NULL,
+    valor_consulta INT NOT NULL,
     disponibilidade BOOLEAN NOT NULL
 );
 
@@ -15,6 +16,7 @@ INSERT INTO medicos values (
     'dermatologia',
     9,
     10,
+    170,
     true
 );
 
@@ -25,6 +27,7 @@ INSERT INTO medicos values (
     'anestesiologia',
     8,
     5,
+    1500,
     true
 );
 
@@ -35,6 +38,7 @@ INSERT INTO medicos values (
     'neurologia',
     5,
     2,
+    250,
     true
 );
 
@@ -45,6 +49,7 @@ INSERT INTO medicos values (
     'urologia',
     7,
     30,
+    300,    
     true
 );
 
@@ -55,5 +60,6 @@ INSERT INTO medicos values (
     'ginecologia',
     3,
     15,
+    200,
     false
 );
