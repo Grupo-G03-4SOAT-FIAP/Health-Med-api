@@ -12,12 +12,12 @@ export class ConsultaNaoLocalizada extends HttpException {
 }
 
 export class ConsultaStatusInvalido extends HttpException {
-    constructor(message: string) {
-      const errorResponse = {
-        message: message,
-        error: 'Not found',
-        statusCode: HttpStatus.BAD_REQUEST,
-      };
-      super(errorResponse, HttpStatus.BAD_REQUEST);
-    }
+  constructor(message: string) {
+    const errorResponse = {
+      message: message,
+      error: 'Not found',
+      statusCode: HttpStatus.BAD_REQUEST,
+    };
+    super(errorResponse, HttpStatus.BAD_REQUEST);
   }
+}

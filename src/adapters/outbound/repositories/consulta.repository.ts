@@ -23,19 +23,34 @@ export class ConsultaRepository implements IConsultaRepository {
   }
 
   async buscarConsultaPorId(consultaId: string): Promise<ConsultaModel> {
-    const consulta = await this.repository.findOne({where: {id: consultaId}})
-    return consulta
+    const consulta = await this.repository.findOne({
+      where: { id: consultaId },
+    });
+    return consulta;
   }
 
-  async statusConsulta(consultaId: string, status: StatusConsulta): Promise<ConsultaModel> {
-    await this.repository.update(consultaId, {statusConsulta: status})
-    const novaConsulta = await this.repository.findOne({where: {id: consultaId}})
+  async statusConsulta(
+    consultaId: string,
+    status: StatusConsulta,
+  ): Promise<ConsultaModel> {
+    await this.repository.update(consultaId, { statusConsulta: status });
+    const novaConsulta = await this.repository.findOne({
+      where: { id: consultaId },
+    });
 
-  if(novaConsulta.statusConsulta === StatusConsulta.CANCELADA || novaConsulta.statusConsulta === StatusConsulta.NAO_REALIZADA || novaConsulta.statusConsulta === StatusConsulta.RECUSADA) {
-    await this.agendaRepository.update(novaConsulta.agendaId, {reservado: false})
-  } else {
-    await this.agendaRepository.update(novaConsulta.agendaId, {reservado: true})
-  }
+    if (
+      novaConsulta.statusConsulta === StatusConsulta.CANCELADA ||
+      novaConsulta.statusConsulta === StatusConsulta.NAO_REALIZADA ||
+      novaConsulta.statusConsulta === StatusConsulta.RECUSADA
+    ) {
+      await this.agendaRepository.update(novaConsulta.agendaId, {
+        reservado: false,
+      });
+    } else {
+      await this.agendaRepository.update(novaConsulta.agendaId, {
+        reservado: true,
+      });
+    }
     return novaConsulta;
   }
 }

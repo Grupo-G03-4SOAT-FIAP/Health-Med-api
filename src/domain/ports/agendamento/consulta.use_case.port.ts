@@ -5,9 +5,12 @@ import {
 import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
 
 export interface IConsultaUseCase {
-  agendarConsulta(consulta: AgendarConsultaDTO): Promise<ConsultaDTO>,
-  buscarConsultaPorId(consultaId: string): Promise<ConsultaDTO>,
-  stautsConsulta(consultaId: string, status: StatusConsulta): Promise<ConsultaDTO>,
+  agendarConsulta(consulta: AgendarConsultaDTO): Promise<ConsultaDTO>;
+  buscarConsultaPorId(consultaId: string): Promise<ConsultaDTO>;
+  stautsConsulta(
+    consultaId: string,
+    status: StatusConsulta,
+  ): Promise<ConsultaDTO>;
 }
 
 export const IConsultaUseCase = Symbol('IConsultaUseCase');

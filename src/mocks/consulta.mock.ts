@@ -1,5 +1,7 @@
-
-import { AgendarConsultaDTO, ConsultaDTO } from 'src/adapters/inbound/rest/v1/presenters/consulta.dto';
+import {
+  AgendarConsultaDTO,
+  ConsultaDTO,
+} from 'src/adapters/inbound/rest/v1/presenters/consulta.dto';
 import { ConsultaModel } from 'src/adapters/outbound/models/consulta.model';
 import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
 
@@ -30,18 +32,17 @@ export const agendarConsultaDTOMock: AgendarConsultaDTO = {
   emailPaciente: 'john.doe@example.com',
 };
 
-
 export const consultaRepositoryMock = {
-    criarConsulta: jest.fn(),
-    cancelarConsulta: jest.fn(),
-    buscarConsultaPorId: jest.fn()
-}
+  criarConsulta: jest.fn(),
+  cancelarConsulta: jest.fn(),
+  buscarConsultaPorId: jest.fn(),
+};
 
 export const consultaUseCaseMock = {
-    agendarConsulta: jest.fn(),
-    buscarConsultaPorId: jest.fn(),
-    cancelarConsulta: jest.fn()
-}
+  agendarConsulta: jest.fn(),
+  buscarConsultaPorId: jest.fn(),
+  cancelarConsulta: jest.fn(),
+};
 
 export const consultaTypeORMMock = {
   create: jest.fn(),

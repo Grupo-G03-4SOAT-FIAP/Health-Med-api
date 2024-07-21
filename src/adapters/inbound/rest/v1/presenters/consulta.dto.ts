@@ -21,5 +21,5 @@ export class ConsultaDTO {
   nomePaciente: string;
   cpfPaciente: string;
   emailPaciente: string;
-  status: StatusConsulta
+  status: StatusConsulta;
 }
