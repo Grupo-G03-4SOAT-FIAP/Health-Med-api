@@ -3,6 +3,94 @@ GET http://localhost:3002/health
 
 ##################################################
 
+@CognitoClientId=<Coloque o Client ID do Congito aqui>
+# Para provisionar o Cognito na AWS clone o repositório Health-Med-iac e siga as instruções no README
+
+### Fazer login de paciente
+POST https://cognito-idp.us-east-1.amazonaws.com
+Content-Type: application/x-amz-json-1.1
+X-Amz-Target: AWSCognitoIdentityProviderService.InitiateAuth
+
+{
+    "AuthFlow": "USER_PASSWORD_AUTH",
+    "AuthParameters": {
+        "USERNAME": "00000000191",
+        "PASSWORD": "Mudar@123"
+    },
+    "ClientId": "{{CognitoClientId}}"
+}
+
+### Fazer login de médico
+POST https://cognito-idp.us-east-1.amazonaws.com
+Content-Type: application/x-amz-json-1.1
+X-Amz-Target: AWSCognitoIdentityProviderService.InitiateAuth
+
+{
+    "AuthFlow": "USER_PASSWORD_AUTH",
+    "AuthParameters": {
+        "USERNAME": "194528-SP",
+        "PASSWORD": "Mudar@123"
+    },
+    "ClientId": "{{CognitoClientId}}"
+}
+
+# DICA
+# O Token de Authorization pode ser consultado no campo "IdToken" na response do Cognito
+
+##################################################
+
+### Listar todos os médicos
+GET http://localhost:3000/medico
+
+### Listar médicos com filtro
+GET http://localhost:3000/medico?especialidade=dermatologia&distancia=10&avaliacao=9
+
+### Consultar um médico específico
+GET http://localhost:3000/medico/87299678-a39f-46ff-a849-79c35f561945
+
+##################################################
+
+### Ver todos os horários na agenda do médico
+GET http://localhost:3000/agenda/medico/87299678-a39f-46ff-a849-79c35f561945
+
+### Criar horário na agenda do médico
+POST http://localhost:3000/agenda
+Content-Type: application/json
+Authorization: Bearer ???
+
+{
+  "medicoId": "87299678-a39f-46ff-a849-79c35f561945",
+  "data": "2024-07-21",
+  "horaInicio": "14:00:00",
+  "horaFim": "15:00:00",
+  "reservado": true
+}
+
+### Editar horário na agenda do médico
+PUT http://localhost:3000/agenda/d832d9b9-cfd5-4960-8214-c4452800cf94
+Content-Type: application/json
+Authorization: Bearer ???
+
+{
+  "medicoId": "87299678-a39f-46ff-a849-79c35f561945",
+  "data": "2024-07-21",
+  "horaInicio": "14:00:00",
+  "horaFim": "15:00:00",
+  "reservado": true
+}
+
+### Excluir horário da agenda do médico
+DELETE http://localhost:3000/agenda/d832d9b9-cfd5-4960-8214-c4452800cf94
+Authorization: Bearer ???
+
+### Reservar horário na agenda do médico
+PATCH http://localhost:3000/agenda/book/d832d9b9-cfd5-4960-8214-c4452800cf94
+
+### Liberar horário na agenda do médico
+PATCH http://localhost:3000/agenda/free/d832d9b9-cfd5-4960-8214-c4452800cf94
+
+##################################################
+
 ### Agendar consulta
 POST http://localhost:3000/consulta
 Content-Type: application/json
