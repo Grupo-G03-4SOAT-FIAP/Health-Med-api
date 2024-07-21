@@ -99,3 +99,6 @@ Authorization: Bearer ???
 {
     "agendaId": "6a9d3e75-06e2-4066-aa4a-9c2a5f44ba3f"
 }
+
+### Alterar status da consulta
+PUT http://localhost:3000/consulta/status/1dd766b8-b543-4d96-be7f-1ecc3c268312?status=recusada
