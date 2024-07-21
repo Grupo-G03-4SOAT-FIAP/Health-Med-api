@@ -30,6 +30,7 @@ medicoDTOMock.crm = '127670-SP';
 medicoDTOMock.especialidade = 'NEUROLOGIA';
 medicoDTOMock.avaliacao = 4.5;
 medicoDTOMock.distancia = 10;
+medicoDTOMock.valorConsulta = 200;
 
 export const medicoModelMock = new MedicoModel();
 medicoModelMock.id = '87299678-a39f-46ff-a849-79c35f561945';
@@ -38,4 +39,5 @@ medicoModelMock.crm = '127670-SP';
 medicoModelMock.especialidade = 'NEUROLOGIA';
 medicoModelMock.avaliacao = 4.5;
 medicoModelMock.distancia = 10;
+medicoModelMock.valorConsulta = 200;
 medicoModelMock.disponivel = true;
