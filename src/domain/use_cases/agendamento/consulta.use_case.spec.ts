@@ -1,12 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ConsultaUseCase } from './consulta.use_case';
 import { IConsultaRepository } from 'src/domain/ports/agendamento/consulta.repository.port';
-import { ConsultaDTO, AgendarConsultaDTO } from 'src/adapters/inbound/rest/v1/presenters/consulta.dto';
+import { ConsultaDTO } from 'src/adapters/inbound/rest/v1/presenters/consulta.dto';
 import { ConsultaEntity } from 'src/domain/entities/consulta.entity';
 import { ConsultaNaoLocalizada } from 'src/domain/exceptions/consulta.exception';
 import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
-import { agendarConsultaDTOMock, consultaRepositoryMock, consultaUseCaseMock } from 'src/mocks/consulta.mock';  
-import { consultaModelMock, consultaDTOMock } from 'src/mocks/consulta.mock';  
+import { agendarConsultaDTOMock, consultaRepositoryMock } from 'src/mocks/consulta.mock';  
+import { consultaModelMock } from 'src/mocks/consulta.mock';  
 
 describe('ConsultaUseCase', () => {
   let consultaUseCase: ConsultaUseCase;
