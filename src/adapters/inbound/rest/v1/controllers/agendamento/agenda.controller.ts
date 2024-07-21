@@ -24,12 +24,11 @@ export class AgendaController {
   @Post()
   @Authorization(['medicos'])
   async criar(
-    @CognitoUser('sub') sub: string,
+    @CognitoUser('custom:id') id: string,
     @Body() horario: any,
   ): Promise<any> {
     try {
-      const medicoId = sub;
-      horario.medicoId = medicoId;
+      horario.medicoId = id;
       return await this.agendaUseCase.criarAgenda(horario);
     } catch (error) {
       throw new BadRequestException(error.message);
