@@ -1,4 +1,5 @@
 import { IsString } from 'class-validator';
+import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
 
 export class AgendarConsultaDTO {
   @IsString()
@@ -20,4 +21,5 @@ export class ConsultaDTO {
   nomePaciente: string;
   cpfPaciente: string;
   emailPaciente: string;
+  status: StatusConsulta
 }
