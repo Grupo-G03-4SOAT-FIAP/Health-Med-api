@@ -1,4 +1,4 @@
-import { IAgendamentoRepository } from 'src/domain/ports/agendamento/agendamento.repository.port';
+import { IAgendaRepository } from 'src/domain/ports/agendamento/agenda.repository.port';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { HttpModule } from '@nestjs/axios';
@@ -12,16 +12,22 @@ import { PostgresConfigService } from './adapters/outbound/database/postgres.con
 import { IMedicoUseCase } from './domain/ports/medico/medico.use_case.port';
 import { IMedicoRepository } from './domain/ports/medico/medico.repository.port';
 import { MedicoRepository } from './adapters/outbound/repositories/medico.repository';
-import { AgendamentoUseCase } from './domain/use_cases/agendamento/agendamento.use_case';
-import { IAgendamentoUseCase } from './domain/ports/agendamento/agendamento.use_case.port';
-import { AgendamentoRepository } from './adapters/outbound/repositories/agendamento.repository';
-import { AgendamentoController } from './adapters/inbound/rest/v1/controllers/agendamento/agendamento.controller';
-import { AgendamentoModel } from './adapters/outbound/models/agendamento.model';
+import { AgendaUseCase } from './domain/use_cases/agendamento/agenda.use_case';
+import { IAgendaUseCase } from './domain/ports/agendamento/agenda.use_case.port';
+import { AgendaRepository } from './adapters/outbound/repositories/agenda.repository';
+import { AgendaModel } from './adapters/outbound/models/agenda.model';
+import { AgendaController } from './adapters/inbound/rest/v1/controllers/agendamento/agenda.controller';
+import { ConsultaController } from './adapters/inbound/rest/v1/controllers/agendamento/consulta.controller';
+import { ConsultaUseCase } from './domain/use_cases/agendamento/consulta.use_case';
+import { IConsultaRepository } from './domain/ports/agendamento/consulta.repository.port';
+import { ConsultaRepository } from './adapters/outbound/repositories/consulta.repository';
+import { ConsultaModel } from './adapters/outbound/models/consulta.model';
+import { IConsultaUseCase } from './domain/ports/agendamento/consulta.use_case.port';
 
 @Module({
   imports: [
     HttpModule,
-    TypeOrmModule.forFeature([MedicoModel, AgendamentoModel]),
+    TypeOrmModule.forFeature([MedicoModel, AgendaModel, ConsultaModel]),
     ConfigModule.forRoot({
       isGlobal: true,
     }),
@@ -30,11 +36,17 @@ import { AgendamentoModel } from './adapters/outbound/models/agendamento.model';
       inject: [PostgresConfigService],
     }),
   ],
-  controllers: [AppController, MedicoController, AgendamentoController],
+  controllers: [
+    AppController,
+    MedicoController,
+    AgendaController,
+    ConsultaController,
+  ],
   providers: [
     AppUseCase,
     MedicoUseCase,
-    AgendamentoUseCase,
+    AgendaUseCase,
+    ConsultaUseCase,
     {
       provide: IMedicoUseCase,
       useClass: MedicoUseCase,
@@ -44,12 +56,20 @@ import { AgendamentoModel } from './adapters/outbound/models/agendamento.model';
       useClass: MedicoRepository,
     },
     {
-      provide: IAgendamentoUseCase,
-      useClass: AgendamentoUseCase,
+      provide: IAgendaUseCase,
+      useClass: AgendaUseCase,
     },
     {
-      provide: IAgendamentoRepository,
-      useClass: AgendamentoRepository,
+      provide: IAgendaRepository,
+      useClass: AgendaRepository,
+    },
+    {
+      provide: IConsultaUseCase,
+      useClass: ConsultaUseCase,
+    },
+    {
+      provide: IConsultaRepository,
+      useClass: ConsultaRepository,
     },
   ],
 })

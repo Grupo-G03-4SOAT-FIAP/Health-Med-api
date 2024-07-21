@@ -21,7 +21,7 @@ export class MedicoRepository implements IMedicoRepository {
     filtros: FiltrosMedicoDTO,
   ): Promise<MedicoModel[] | []> {
     return await this.repository.find({
-      where: { disponibilidade: true, ...filtros },
+      where: { disponivel: true, ...filtros },
     });
   }
 }

@@ -40,7 +40,7 @@ describe('MedicoRepository', () => {
     const result = await medicoRepository.listarMedicosDisponiveis(filtros);
 
     expect(medicoTypeORMMock.find).toHaveBeenCalledWith({
-      where: { disponibilidade: true, ...filtros },
+      where: { disponivel: true, ...filtros },
     });
     expect(result).toBe(listaMedicos);
   });
@@ -52,7 +52,7 @@ describe('MedicoRepository', () => {
     const result = await medicoRepository.listarMedicosDisponiveis(filtros);
 
     expect(medicoTypeORMMock.find).toHaveBeenCalledWith({
-      where: { disponibilidade: true, ...filtros },
+      where: { disponivel: true, ...filtros },
     });
     expect(result).toBe(listaMedicos);
   });

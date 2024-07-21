@@ -27,8 +27,11 @@ export class MedicoModel {
   @Column({ name: 'distancia', nullable: false })
   distancia: number;
 
+  @Column({ name: 'valor_consulta', nullable: false })
+  valorConsulta: number;
+
   @Column({ name: 'disponibilidade', nullable: false, default: true })
-  disponibilidade: boolean;
+  disponivel: boolean;
 
   @CreateDateColumn({ name: 'criado_em' })
   criadoEm: string;

@@ -26,6 +26,7 @@ export class MedicoUseCase implements IMedicoUseCase {
     medico.nome = medicoModel.nome;
     medico.crm = medicoModel.crm;
     medico.especialidade = medicoModel.especialidade;
+    medico.valorConsulta = medicoModel.valorConsulta;
     medico.avaliacao = medicoModel.avaliacao;
     medico.distancia = medicoModel.distancia;
 
@@ -41,6 +42,7 @@ export class MedicoUseCase implements IMedicoUseCase {
       medico.nome = medicoModel.nome;
       medico.crm = medicoModel.crm;
       medico.especialidade = medicoModel.especialidade;
+      medico.valorConsulta = medicoModel.valorConsulta;
       medico.avaliacao = medicoModel.avaliacao;
       medico.distancia = medicoModel.distancia;
 

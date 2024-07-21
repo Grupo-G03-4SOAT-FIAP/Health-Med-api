@@ -38,4 +38,4 @@ medicoModelMock.crm = '127670-SP';
 medicoModelMock.especialidade = 'NEUROLOGIA';
 medicoModelMock.avaliacao = 4.5;
 medicoModelMock.distancia = 10;
-medicoModelMock.disponibilidade = true;
+medicoModelMock.disponivel = true;
