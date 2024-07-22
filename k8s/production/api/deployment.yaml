@@ -23,7 +23,7 @@ spec:
             driver: secrets-store.csi.k8s.io
             readOnly: true
             volumeAttributes:
-              secretProviderClass: aws-secrets-api-pedidos
+              secretProviderClass: aws-secrets-api
       containers:
         - name: health-med-api
           image: 900534935988.dkr.ecr.us-east-1.amazonaws.com/health-med-api:latest
@@ -38,22 +38,22 @@ spec:
             - name: DB_HOST
               valueFrom:
                 secretKeyRef:
-                  name: db-pedidos-secret
+                  name: db-api-secret
                   key: host
             - name: DB_PORT
               valueFrom:
                 secretKeyRef:
-                  name: db-pedidos-secret
+                  name: db-api-secret
                   key: port
             - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: db-pedidos-secret
+                  name: db-api-secret
                   key: username
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: db-pedidos-secret
+                  name: db-api-secret
                   key: password
             - name: COGNITO_USER_POOL_ID
               valueFrom:
@@ -65,81 +65,26 @@ spec:
                 secretKeyRef:
                   name: cognito-secret
                   key: COGNITO_CLIENT_ID
-            - name: NOME_FILA_NOVA_COBRANCA
+            - name: GOOGLE_MEET_API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: sqs-fila-nova-cobranca-secret
-                  key: NOME_FILA_NOVA_COBRANCA
-            - name: URL_FILA_NOVA_COBRANCA
+                  name: google-meet-secret
+                  key: GOOGLE_MEET_API_KEY
+            - name: NOME_FILA_EXEMPLO
               valueFrom:
                 secretKeyRef:
-                  name: sqs-fila-nova-cobranca-secret
-                  key: URL_FILA_NOVA_COBRANCA
-            - name: REGION_FILA_NOVA_COBRANCA
+                  name: sqs-fila-exemplo-secret
+                  key: NOME_FILA_EXEMPLO
+            - name: URL_FILA_EXEMPLO
               valueFrom:
                 secretKeyRef:
-                  name: sqs-fila-nova-cobranca-secret
-                  key: REGION_FILA_NOVA_COBRANCA
-            - name: NOME_FILA_COBRANCA_GERADA
+                  name: sqs-fila-exemplo-secret
+                  key: URL_FILA_EXEMPLO
+            - name: REGION_FILA_EXEMPLO
               valueFrom:
                 secretKeyRef:
-                  name: sqs-fila-cobranca-gerada-secret
-                  key: NOME_FILA_COBRANCA_GERADA
-            - name: URL_FILA_COBRANCA_GERADA
-              valueFrom:
-                secretKeyRef:
-                  name: sqs-fila-cobranca-gerada-secret
-                  key: URL_FILA_COBRANCA_GERADA
-            - name: REGION_FILA_COBRANCA_GERADA
-              valueFrom:
-                secretKeyRef:
-                  name: sqs-fila-cobranca-gerada-secret
-                  key: REGION_FILA_COBRANCA_GERADA
-            - name: NOME_FILA_FALHA_COBRANCA
-              valueFrom:
-                secretKeyRef:
-                  name: sqs-fila-falha-cobranca-secret
-                  key: NOME_FILA_FALHA_COBRANCA
-            - name: URL_FILA_FALHA_COBRANCA
-              valueFrom:
-                secretKeyRef:
-                  name: sqs-fila-falha-cobranca-secret
-                  key: URL_FILA_FALHA_COBRANCA
-            - name: REGION_FILA_FALHA_COBRANCA
-              valueFrom:
-                secretKeyRef:
-                  name: sqs-fila-falha-cobranca-secret
-                  key: REGION_FILA_FALHA_COBRANCA
-            - name: NOME_FILA_PAGAMENTO_CONFIRMADO
-              valueFrom:
-                secretKeyRef:
-                  name: sqs-fila-pagamento-confirmado-secret
-                  key: NOME_FILA_PAGAMENTO_CONFIRMADO
-            - name: URL_FILA_PAGAMENTO_CONFIRMADO
-              valueFrom:
-                secretKeyRef:
-                  name: sqs-fila-pagamento-confirmado-secret
-                  key: URL_FILA_PAGAMENTO_CONFIRMADO
-            - name: REGION_FILA_PAGAMENTO_CONFIRMADO
-              valueFrom:
-                secretKeyRef:
-                  name: sqs-fila-pagamento-confirmado-secret
-                  key: REGION_FILA_PAGAMENTO_CONFIRMADO
-            - name: NOME_FILA_FALHA_PAGAMENTO
-              valueFrom:
-                secretKeyRef:
-                  name: sqs-fila-falha-pagamento-secret
-                  key: NOME_FILA_FALHA_PAGAMENTO
-            - name: URL_FILA_FALHA_PAGAMENTO
-              valueFrom:
-                secretKeyRef:
-                  name: sqs-fila-falha-pagamento-secret
-                  key: URL_FILA_FALHA_PAGAMENTO
-            - name: REGION_FILA_FALHA_PAGAMENTO
-              valueFrom:
-                secretKeyRef:
-                  name: sqs-fila-falha-pagamento-secret
-                  key: REGION_FILA_FALHA_PAGAMENTO
+                  name: sqs-fila-exemplo-secret
+                  key: REGION_FILA_EXEMPLO
           ports:
             - containerPort: 3000
           resources:

@@ -34,11 +34,6 @@ spec:
                 secretKeyRef:
                   name: health-med-api-secret
                   key: DB_PASSWORD
-            - name: ACCESS_TOKEN_MERCADOPAGO
-              valueFrom:
-                secretKeyRef:
-                  name: health-med-api-secret
-                  key: ACCESS_TOKEN_MERCADOPAGO
           ports:
             - containerPort: 3000
           resources:
