@@ -7,7 +7,7 @@ import { ConsultaEntity } from 'src/domain/entities/consulta.entity';
 import { ConsultaNaoLocalizada } from 'src/domain/exceptions/consulta.exception';
 import { IConsultaRepository } from 'src/domain/ports/agendamento/consulta.repository.port';
 import { IConsultaUseCase } from 'src/domain/ports/agendamento/consulta.use_case.port';
-import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
+import { StatusConsulta } from '../../../utils/statusConsulta.enum';
 
 @Injectable()
 export class ConsultaUseCase implements IConsultaUseCase {
@@ -35,6 +35,7 @@ export class ConsultaUseCase implements IConsultaUseCase {
     consultaDTO.nomePaciente = consultaModel.nomePaciente;
     consultaDTO.cpfPaciente = consultaModel.cpfPaciente;
     consultaDTO.emailPaciente = consultaModel.emailPaciente;
+    consultaDTO.status = consultaModel.statusConsulta;
 
     return consultaDTO;
   }
@@ -54,7 +55,7 @@ export class ConsultaUseCase implements IConsultaUseCase {
     return consultaDTO;
   }
 
-  async stautsConsulta(
+  async statusConsulta(
     consultaId: string,
     status: StatusConsulta,
   ): Promise<ConsultaDTO> {

@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 import { IConsultaUseCase } from 'src/domain/ports/agendamento/consulta.use_case.port';
 import { ConsultaDTO, AgendarConsultaDTO } from '../../presenters/consulta.dto';
-import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
+import { StatusConsulta } from 'src/utils/statusConsulta.enum';
 import { ConsultaStatusInvalido } from 'src/domain/exceptions/consulta.exception';
 import { Authorization, CognitoUser } from '@nestjs-cognito/auth';
 
@@ -50,6 +50,6 @@ export class ConsultaController {
     if (!Object.values(StatusConsulta).includes(status as StatusConsulta)) {
       throw new ConsultaStatusInvalido('Status inválido');
     }
-    return await this.consultaUseCase.stautsConsulta(id, status);
+    return await this.consultaUseCase.statusConsulta(id, status);
   }
 }

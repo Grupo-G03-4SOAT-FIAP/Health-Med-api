@@ -7,7 +7,7 @@ import {
   consultaTypeORMMock,
 } from 'src/mocks/consulta.mock';
 import { ConsultaEntity } from 'src/domain/entities/consulta.entity';
-import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
+import { StatusConsulta } from '../../../utils/statusConsulta.enum';
 import { AgendaModel } from '../models/agenda.model';
 import { agendaTypeORMMock } from 'src/mocks/agenda.mock';
 import { AgendaRepository } from './agenda.repository';

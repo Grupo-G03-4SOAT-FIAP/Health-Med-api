@@ -4,12 +4,12 @@ import { IConsultaRepository } from 'src/domain/ports/agendamento/consulta.repos
 import { ConsultaDTO } from 'src/adapters/inbound/rest/v1/presenters/consulta.dto';
 import { ConsultaEntity } from 'src/domain/entities/consulta.entity';
 import { ConsultaNaoLocalizada } from 'src/domain/exceptions/consulta.exception';
-import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
+import { StatusConsulta } from '../../../utils/statusConsulta.enum';
 import {
   agendarConsultaDTOMock,
   consultaRepositoryMock,
 } from 'src/mocks/consulta.mock';
-import { consultaModelMock } from 'src/mocks/consulta.mock';
+import { consultaModelMock, consultaDTOMock } from 'src/mocks/consulta.mock';
 
 describe('ConsultaUseCase', () => {
   let consultaUseCase: ConsultaUseCase;
@@ -30,38 +30,48 @@ describe('ConsultaUseCase', () => {
   });
   //Validar teste
   it('deve agendar uma consulta com sucesso', async () => {
+    consultaRepositoryMock.criarConsulta.mockReturnValue(consultaModelMock);
     const consultaDTO: ConsultaDTO = await consultaUseCase.agendarConsulta(
       agendarConsultaDTOMock,
     );
 
-    expect(consultaRepositoryMock.criarConsulta).toHaveBeenCalledWith(
-      new ConsultaEntity(
-        agendarConsultaDTOMock.agendaId,
-        agendarConsultaDTOMock.nomePaciente,
-        agendarConsultaDTOMock.cpfPaciente,
-        agendarConsultaDTOMock.emailPaciente,
-      ),
+    const entidadeConsulta = new ConsultaEntity(
+      agendarConsultaDTOMock.agendaId,
+      agendarConsultaDTOMock.nomePaciente,
+      agendarConsultaDTOMock.cpfPaciente,
+      agendarConsultaDTOMock.emailPaciente,
     );
-    expect(consultaDTO).toEqual(consultaModelMock);
+    entidadeConsulta.statusConsultaAgendada();
+
+    expect(consultaRepositoryMock.criarConsulta).toHaveBeenCalledWith(
+      entidadeConsulta,
+    );
+    expect(consultaDTO).toEqual(consultaDTOMock);
   });
 
   it('deve buscar uma consulta por ID com sucesso', async () => {
     const consultaId = '12345678-1234-1234-1234-123456789012';
+    consultaRepositoryMock.buscarConsultaPorId.mockReturnValue(
+      consultaModelMock,
+    );
     const consultaDTO: ConsultaDTO =
       await consultaUseCase.buscarConsultaPorId(consultaId);
 
     expect(consultaRepositoryMock.buscarConsultaPorId).toHaveBeenCalledWith(
       consultaId,
     );
-    expect(consultaDTO).toEqual({
-      ...consultaModelMock,
-      status: consultaModelMock.statusConsulta,
-    });
+    expect(consultaDTO).toEqual(consultaDTOMock);
   });
 
   it('deve cancelar uma consulta com sucesso', async () => {
     const consultaId = '12345678-1234-1234-1234-123456789012';
-    const consultaDTO: ConsultaDTO = await consultaUseCase.stautsConsulta(
+    consultaRepositoryMock.buscarConsultaPorId.mockReturnValue(
+      consultaModelMock,
+    );
+    consultaModelMock.statusConsulta = StatusConsulta.CANCELADA;
+    consultaRepositoryMock.statusConsulta.mockReturnValue(consultaModelMock);
+
+    const consultaDTO: ConsultaDTO = await consultaUseCase.statusConsulta(
       consultaId,
       StatusConsulta.CANCELADA,
     );
@@ -69,13 +79,9 @@ describe('ConsultaUseCase', () => {
     expect(consultaRepositoryMock.buscarConsultaPorId).toHaveBeenCalledWith(
       consultaId,
     );
-    expect(consultaRepositoryMock.cancelarConsulta).toHaveBeenCalledWith(
-      consultaId,
-    );
-    expect(consultaDTO).toEqual({
-      ...consultaModelMock,
-      status: StatusConsulta.CANCELADA,
-    });
+
+    consultaDTOMock.status = StatusConsulta.CANCELADA;
+    expect(consultaDTO).toEqual(consultaDTOMock);
   });
 
   it('deve lançar uma exceção ao cancelar uma consulta que não existe', async () => {
@@ -85,7 +91,7 @@ describe('ConsultaUseCase', () => {
       .mockResolvedValue(null);
 
     await expect(
-      consultaUseCase.stautsConsulta(consultaId, StatusConsulta.CANCELADA),
+      consultaUseCase.statusConsulta(consultaId, StatusConsulta.CANCELADA),
     ).rejects.toThrow(ConsultaNaoLocalizada);
   });
 });

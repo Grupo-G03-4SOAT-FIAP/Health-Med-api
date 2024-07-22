@@ -1,4 +1,4 @@
-import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
+import { StatusConsulta } from '../../utils/statusConsulta.enum';
 
 export class ConsultaEntity {
   id?: string;
