@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import { IConsultaRepository } from 'src/domain/ports/agendamento/consulta.repository.port';
 import { ConsultaModel } from '../models/consulta.model';
 import { ConsultaEntity } from 'src/domain/entities/consulta.entity';
-import { StatusConsulta } from 'src/utils/statusConsulta.enum';
+import { StatusConsulta } from '../../../utils/statusConsulta.enum';
 import { AgendaModel } from '../models/agenda.model';
 
 @Injectable()

@@ -1,4 +1,4 @@
-import { StatusConsulta } from 'src/utils/statusConsulta.enum';
+import { StatusConsulta } from '../../../utils/statusConsulta.enum';
 import {
   Entity,
   Column,

@@ -3,7 +3,7 @@ import {
   ConsultaDTO,
 } from 'src/adapters/inbound/rest/v1/presenters/consulta.dto';
 import { ConsultaModel } from 'src/adapters/outbound/models/consulta.model';
-import { StatusConsulta } from 'src/utils/statusConsulta.enum';
+import { StatusConsulta } from '../utils/statusConsulta.enum';
 
 export const consultaModelMock: ConsultaModel = {
   id: '12345678-1234-1234-1234-123456789012',

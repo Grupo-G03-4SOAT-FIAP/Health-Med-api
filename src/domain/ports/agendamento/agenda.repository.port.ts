@@ -1,4 +1,4 @@
-import { AgendaModel } from 'src/adapters/outbound/models/agenda.model';
+import { AgendaModel } from '../../../adapters/outbound/models/agenda.model';
 import { Horarios } from '../../../adapters/inbound/rest/v1/presenters/agenda.dto';
 
 export interface IAgendaRepository {
