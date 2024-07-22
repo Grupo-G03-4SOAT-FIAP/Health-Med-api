@@ -24,6 +24,11 @@ import { ConsultaRepository } from './adapters/outbound/repositories/consulta.re
 import { ConsultaModel } from './adapters/outbound/models/consulta.model';
 import { IConsultaUseCase } from './domain/ports/agendamento/consulta.use_case.port';
 import { CognitoAuthModule } from '@nestjs-cognito/auth';
+import { ProntuarioController } from './adapters/inbound/rest/v1/controllers/prontuario/prontuario.controller';
+import { IProntuarioUseCase } from './domain/ports/prontuario/prontuario.use_case.port';
+import { ProntuarioUseCase } from './domain/use_cases/prontuario/prontuario.use_case';
+import { IProntuarioService } from './domain/ports/prontuario/prontuario.service.port';
+import { ProntuarioService } from './adapters/outbound/services/prontuario.service';
 
 @Module({
   imports: [
@@ -55,6 +60,7 @@ import { CognitoAuthModule } from '@nestjs-cognito/auth';
     MedicoController,
     AgendaController,
     ConsultaController,
+    ProntuarioController,
   ],
   providers: [
     AppUseCase,
@@ -84,6 +90,14 @@ import { CognitoAuthModule } from '@nestjs-cognito/auth';
     {
       provide: IConsultaRepository,
       useClass: ConsultaRepository,
+    },
+    {
+      provide: IProntuarioUseCase,
+      useClass: ProntuarioUseCase,
+    },
+    {
+      provide: IProntuarioService,
+      useClass: ProntuarioService,
     },
   ],
 })
