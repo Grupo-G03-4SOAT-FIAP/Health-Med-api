@@ -3,6 +3,7 @@ import { AgendaController } from './agenda.controller';
 import { IAgendaUseCase } from 'src/domain/ports/agendamento/agenda.use_case.port';
 import { BadRequestException } from '@nestjs/common';
 import { mockAgendaUseCase } from 'src/mocks/agenda.mock';
+import { CognitoTestingModule } from '@nestjs-cognito/testing';
 
 describe('AgendaController', () => {
   let agendaController: AgendaController;
@@ -10,6 +11,13 @@ describe('AgendaController', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
+      imports: [
+        CognitoTestingModule.register({
+          identityProvider: {
+            region: 'eu-west-1',
+          },
+        }),
+      ],
       controllers: [AgendaController],
       providers: [
         {
