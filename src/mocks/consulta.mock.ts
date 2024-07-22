@@ -38,6 +38,12 @@ export const consultaRepositoryMock = {
   buscarConsultaPorId: jest.fn(),
 };
 
+export const agendaRepositoryMock = {
+  criarConsulta: jest.fn(),
+  cancelarConsulta: jest.fn(),
+  buscarConsultaPorId: jest.fn(),
+};
+
 export const consultaUseCaseMock = {
   agendarConsulta: jest.fn(),
   buscarConsultaPorId: jest.fn(),
@@ -45,6 +51,13 @@ export const consultaUseCaseMock = {
 };
 
 export const consultaTypeORMMock = {
+  create: jest.fn(),
+  save: jest.fn(),
+  findOne: jest.fn(),
+  update: jest.fn(),
+};
+
+export const agendaTypeORMMock = {
   create: jest.fn(),
   save: jest.fn(),
   findOne: jest.fn(),
