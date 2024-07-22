@@ -23,7 +23,7 @@ import { IConsultaRepository } from './domain/ports/agendamento/consulta.reposit
 import { ConsultaRepository } from './adapters/outbound/repositories/consulta.repository';
 import { ConsultaModel } from './adapters/outbound/models/consulta.model';
 import { IConsultaUseCase } from './domain/ports/agendamento/consulta.use_case.port';
-import { AuthenticationGuard, CognitoAuthModule } from '@nestjs-cognito/auth';
+import { CognitoAuthModule } from '@nestjs-cognito/auth';
 
 @Module({
   imports: [
@@ -52,7 +52,6 @@ import { AuthenticationGuard, CognitoAuthModule } from '@nestjs-cognito/auth';
   ],
   controllers: [
     AppController,
-    AuthenticationGuard,
     MedicoController,
     AgendaController,
     ConsultaController,
