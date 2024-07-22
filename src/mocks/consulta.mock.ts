@@ -3,7 +3,7 @@ import {
   ConsultaDTO,
 } from 'src/adapters/inbound/rest/v1/presenters/consulta.dto';
 import { ConsultaModel } from 'src/adapters/outbound/models/consulta.model';
-import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
+import { StatusConsulta } from 'src/utils/statusConsulta.enum';
 
 export const consultaModelMock: ConsultaModel = {
   id: '12345678-1234-1234-1234-123456789012',
@@ -34,14 +34,13 @@ export const agendarConsultaDTOMock: AgendarConsultaDTO = {
 
 export const consultaRepositoryMock = {
   criarConsulta: jest.fn(),
-  cancelarConsulta: jest.fn(),
   buscarConsultaPorId: jest.fn(),
+  statusConsulta: jest.fn(),
 };
 
 export const consultaUseCaseMock = {
   agendarConsulta: jest.fn(),
   buscarConsultaPorId: jest.fn(),
-  cancelarConsulta: jest.fn(),
 };
 
 export const consultaTypeORMMock = {

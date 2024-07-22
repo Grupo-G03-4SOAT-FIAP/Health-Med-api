@@ -7,7 +7,7 @@ import {
   consultaTypeORMMock,
 } from 'src/mocks/consulta.mock';
 import { ConsultaEntity } from 'src/domain/entities/consulta.entity';
-import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
+import { StatusConsulta } from 'src/utils/statusConsulta.enum';
 
 describe('ConsultaRepository', () => {
   let consultaRepository: ConsultaRepository;

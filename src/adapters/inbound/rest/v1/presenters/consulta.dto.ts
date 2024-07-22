@@ -1,5 +1,5 @@
 import { IsString } from 'class-validator';
-import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
+import { StatusConsulta } from 'src/utils/statusConsulta.enum';
 
 export class AgendarConsultaDTO {
   @IsString()

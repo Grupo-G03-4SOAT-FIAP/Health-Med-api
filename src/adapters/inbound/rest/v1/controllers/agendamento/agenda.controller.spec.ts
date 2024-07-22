@@ -35,7 +35,9 @@ describe('AgendaController', () => {
   it('should create a new horario', async () => {
     mockAgendaUseCase.criarAgenda.mockResolvedValue(horario);
 
-    expect(await agendaController.criar(horario.medicoId, horario)).toBe(horario);
+    expect(await agendaController.criar(horario.medicoId, horario)).toBe(
+      horario,
+    );
   });
 
   it('should throw BadRequestException on error', async () => {
@@ -43,9 +45,9 @@ describe('AgendaController', () => {
       new Error('Failed to create'),
     );
 
-    await expect(agendaController.criar(horario.medicoId, horario)).rejects.toThrow(
-      BadRequestException,
-    );
+    await expect(
+      agendaController.criar(horario.medicoId, horario),
+    ).rejects.toThrow(BadRequestException);
   });
 
   it('should return an array of horarios', async () => {

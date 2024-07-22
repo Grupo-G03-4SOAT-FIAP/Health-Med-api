@@ -2,12 +2,12 @@ import {
   ConsultaDTO,
   AgendarConsultaDTO,
 } from 'src/adapters/inbound/rest/v1/presenters/consulta.dto';
-import { StatusConsulta } from 'src/utils/stautsConsulta.enum';
+import { StatusConsulta } from 'src/utils/statusConsulta.enum';
 
 export interface IConsultaUseCase {
   agendarConsulta(consulta: AgendarConsultaDTO): Promise<ConsultaDTO>;
   buscarConsultaPorId(consultaId: string): Promise<ConsultaDTO>;
-  stautsConsulta(
+  statusConsulta(
     consultaId: string,
     status: StatusConsulta,
   ): Promise<ConsultaDTO>;
