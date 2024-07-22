@@ -8,6 +8,9 @@ import {
 } from 'src/mocks/consulta.mock';
 import { ConsultaEntity } from 'src/domain/entities/consulta.entity';
 import { StatusConsulta } from '../../../utils/statusConsulta.enum';
+import { AgendaModel } from '../models/agenda.model';
+import { agendaTypeORMMock } from 'src/mocks/agenda.mock';
+import { AgendaRepository } from './agenda.repository';
 
 describe('ConsultaRepository', () => {
   let consultaRepository: ConsultaRepository;
@@ -21,6 +24,11 @@ describe('ConsultaRepository', () => {
         {
           provide: getRepositoryToken(ConsultaModel),
           useValue: consultaTypeORMMock,
+        },
+        AgendaRepository,
+        {
+          provide: getRepositoryToken(AgendaModel),
+          useValue: agendaTypeORMMock,
         },
       ],
     }).compile();
