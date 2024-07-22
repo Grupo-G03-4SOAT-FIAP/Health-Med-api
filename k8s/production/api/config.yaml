@@ -6,6 +6,5 @@ metadata:
   labels:
     app: health-med-api
 data:
-  DB_NAME: "pedidos"
+  DB_NAME: "health_med"
   DB_SSL: "false"
-  URL_API_PAGAMENTOS: "http://rms-api-pagamentos.rms.svc.cluster.local:80/pedido"

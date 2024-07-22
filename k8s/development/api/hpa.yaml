@@ -9,5 +9,5 @@ spec:
     kind: Deployment
     name: health-med-api # name do Deployment a ser escalado automaticamente pelo HPA
   minReplicas: 1
-  maxReplicas: 10
+  maxReplicas: 100
   targetCPUUtilizationPercentage: 50
