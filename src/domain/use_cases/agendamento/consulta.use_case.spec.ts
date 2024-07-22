@@ -25,6 +25,7 @@ describe('ConsultaUseCase', () => {
     consultaUseCase = module.get<ConsultaUseCase>(ConsultaUseCase);
   });
 
+  
   afterEach(() => {
     jest.clearAllMocks();
   });
