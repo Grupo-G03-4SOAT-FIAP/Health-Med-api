@@ -7,9 +7,10 @@ import { ConsultaNaoLocalizada } from 'src/domain/exceptions/consulta.exception'
 import { StatusConsulta } from '../../../utils/statusConsulta.enum';
 import {
   agendarConsultaDTOMock,
+  consultaDTOMock,
+  consultaModelMock,
   consultaRepositoryMock,
 } from 'src/mocks/consulta.mock';
-import { consultaModelMock, consultaDTOMock } from 'src/mocks/consulta.mock';
 
 describe('ConsultaUseCase', () => {
   let consultaUseCase: ConsultaUseCase;
