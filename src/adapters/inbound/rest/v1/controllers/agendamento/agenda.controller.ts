@@ -12,7 +12,7 @@ import {
 } from '@nestjs/common';
 import { Horarios } from '../../presenters/agenda.dto';
 import { IAgendaUseCase } from 'src/domain/ports/agendamento/agenda.use_case.port';
-import { Authentication, Authorization, CognitoUser } from '@nestjs-cognito/auth';
+import { Authorization, CognitoUser } from '@nestjs-cognito/auth';
 
 @Controller('agenda')
 export class AgendaController {
@@ -22,7 +22,6 @@ export class AgendaController {
   ) {}
 
   @Post()
-  @Authentication()
   @Authorization(['medicos'])
   async criar(
     @CognitoUser('custom:id') customId: string,
