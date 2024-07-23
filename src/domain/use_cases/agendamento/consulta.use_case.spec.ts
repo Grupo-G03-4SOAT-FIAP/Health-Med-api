@@ -41,6 +41,7 @@ describe('ConsultaUseCase', () => {
       agendarConsultaDTOMock.nomePaciente,
       agendarConsultaDTOMock.cpfPaciente,
       agendarConsultaDTOMock.emailPaciente,
+      consultaDTOMock.linkTeleconsulta,
     );
     entidadeConsulta.statusConsultaAgendada();
 

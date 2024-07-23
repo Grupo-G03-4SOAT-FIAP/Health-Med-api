@@ -16,13 +16,21 @@ export class ConsultaUseCase implements IConsultaUseCase {
     private readonly consultaRepository: IConsultaRepository,
   ) {}
 
-  async agendarConsulta(consulta: AgendarConsultaDTO): Promise<ConsultaDTO> {
-    const { agendaId, nomePaciente, cpfPaciente, emailPaciente } = consulta;
+  async agendarConsulta(
+    agendarConsultaDTO: AgendarConsultaDTO,
+  ): Promise<ConsultaDTO> {
+    const { agendaId, nomePaciente, cpfPaciente, emailPaciente } =
+      agendarConsultaDTO;
+
+    // TODO: Gerar link do Google Meet
+    const linkTeleconsulta = 'https://meet.google.com/xxx-yyyy-zzz';
+
     const entidadeConsulta = new ConsultaEntity(
       agendaId,
       nomePaciente,
       cpfPaciente,
       emailPaciente,
+      linkTeleconsulta,
     );
     entidadeConsulta.statusConsultaAgendada();
 
@@ -32,9 +40,10 @@ export class ConsultaUseCase implements IConsultaUseCase {
     const consultaDTO = new ConsultaDTO();
     consultaDTO.id = consultaModel.id;
     consultaDTO.agendaId = consultaModel.agendaId;
-    consultaDTO.nomePaciente = consultaModel.nomePaciente;
     consultaDTO.cpfPaciente = consultaModel.cpfPaciente;
+    consultaDTO.nomePaciente = consultaModel.nomePaciente;
     consultaDTO.emailPaciente = consultaModel.emailPaciente;
+    consultaDTO.linkTeleconsulta = consultaModel.linkTeleconsulta;
     consultaDTO.status = consultaModel.statusConsulta;
 
     return consultaDTO;
@@ -47,9 +56,10 @@ export class ConsultaUseCase implements IConsultaUseCase {
     const consultaDTO = new ConsultaDTO();
     consultaDTO.id = consultaModel.id;
     consultaDTO.agendaId = consultaModel.agendaId;
-    consultaDTO.nomePaciente = consultaModel.nomePaciente;
     consultaDTO.cpfPaciente = consultaModel.cpfPaciente;
+    consultaDTO.nomePaciente = consultaModel.nomePaciente;
     consultaDTO.emailPaciente = consultaModel.emailPaciente;
+    consultaDTO.linkTeleconsulta = consultaModel.linkTeleconsulta;
     consultaDTO.status = consultaModel.statusConsulta;
 
     return consultaDTO;
@@ -72,9 +82,10 @@ export class ConsultaUseCase implements IConsultaUseCase {
     const consultaDTO = new ConsultaDTO();
     consultaDTO.id = consultaModel.id;
     consultaDTO.agendaId = consultaModel.agendaId;
-    consultaDTO.nomePaciente = consultaModel.nomePaciente;
     consultaDTO.cpfPaciente = consultaModel.cpfPaciente;
+    consultaDTO.nomePaciente = consultaModel.nomePaciente;
     consultaDTO.emailPaciente = consultaModel.emailPaciente;
+    consultaDTO.linkTeleconsulta = consultaModel.linkTeleconsulta;
     consultaDTO.status = consultaModel.statusConsulta;
 
     return consultaDTO;
