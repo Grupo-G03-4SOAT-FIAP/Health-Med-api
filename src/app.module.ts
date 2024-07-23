@@ -3,8 +3,6 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { HttpModule } from '@nestjs/axios';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppUseCase } from './domain/use_cases/app/app.use_case';
-import { AppController } from './adapters/inbound/rest/v1/controllers/app/app.controller';
 import { MedicoController } from './adapters/inbound/rest/v1/controllers/medico/medico.controller';
 import { MedicoUseCase } from './domain/use_cases/medico/medico.use_case';
 import { MedicoModel } from './adapters/outbound/models/medico.model';
@@ -29,10 +27,13 @@ import { IProntuarioUseCase } from './domain/ports/prontuario/prontuario.use_cas
 import { ProntuarioUseCase } from './domain/use_cases/prontuario/prontuario.use_case';
 import { IProntuarioService } from './domain/ports/prontuario/prontuario.service.port';
 import { ProntuarioService } from './adapters/outbound/services/prontuario.service';
+import { HealthController } from './adapters/inbound/rest/v1/controllers/health/health.controller';
+import { TerminusModule } from '@nestjs/terminus';
 
 @Module({
   imports: [
     HttpModule,
+    TerminusModule,
     TypeOrmModule.forFeature([MedicoModel, AgendaModel, ConsultaModel]),
     ConfigModule.forRoot({
       isGlobal: true,
@@ -56,17 +57,13 @@ import { ProntuarioService } from './adapters/outbound/services/prontuario.servi
     }),
   ],
   controllers: [
-    AppController,
+    HealthController,
     MedicoController,
     AgendaController,
     ConsultaController,
     ProntuarioController,
   ],
   providers: [
-    AppUseCase,
-    MedicoUseCase,
-    AgendaUseCase,
-    ConsultaUseCase,
     {
       provide: IMedicoUseCase,
       useClass: MedicoUseCase,
