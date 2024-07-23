@@ -5,16 +5,22 @@ import {
   Inject,
   Param,
   Post,
+  HttpCode,
   Put,
   Query,
 } from '@nestjs/common';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { IConsultaUseCase } from 'src/domain/ports/agendamento/consulta.use_case.port';
 import { ConsultaDTO, AgendarConsultaDTO } from '../../presenters/consulta.dto';
 import { StatusConsulta } from 'src/utils/statusConsulta.enum';
 import { ConsultaStatusInvalido } from 'src/domain/exceptions/consulta.exception';
 import { Authorization, CognitoUser } from '@nestjs-cognito/auth';
+import { BadRequestError } from '../../helpers/swagger/status-codes/bad_requests.swagger';
+import { ConflictError } from '../../helpers/swagger/status-codes/conflict.swagger';
+import { NotFoundError } from '../../helpers/swagger/status-codes/not_found.swagger';
 
 @Controller('consulta')
+@ApiTags('Consulta')
 export class ConsultaController {
   constructor(
     @Inject(IConsultaUseCase)
@@ -23,26 +29,59 @@ export class ConsultaController {
 
   @Post()
   @Authorization(['pacientes'])
+  @HttpCode(201)
+  @ApiOperation({ summary: 'Adicionar uma nova Consulta' })
+  @ApiResponse({
+    status: 201,
+    description: 'Consulta criada com sucesso',
+    type: AgendarConsultaDTO,
+  })
+  @ApiResponse({
+    status: 400,
+    description: 'Dados inválidos',
+    type: BadRequestError,
+  })
+  @ApiResponse({
+    status: 409,
+    description: 'Existe uma Consulta com esse dado',
+    type: ConflictError,
+  })
   async criar(
     @CognitoUser('username') username: string,
     @CognitoUser('name') name: string,
     @CognitoUser('email') email: string,
-    @Body() agendaId,
-  ): Promise<ConsultaDTO> {
-    const consulta = new AgendarConsultaDTO();
-    consulta.agendaId = agendaId;
-    consulta.cpfPaciente = username;
-    consulta.nomePaciente = name;
-    consulta.emailPaciente = email;
+    @Body() consulta: AgendarConsultaDTO,
+  ): Promise<AgendarConsultaDTO> {
     return await this.consultaUseCase.agendarConsulta(consulta);
   }
 
   @Get(':id')
+  @ApiOperation({ summary: 'Buscar a consulta pelo id' })
+  @ApiResponse({
+    status: 200,
+    description: 'Consulta retornada com sucesso',
+    type: ConsultaDTO,
+  })
+  @ApiResponse({
+    status: 404,
+    description: 'Consulta informado não existe',
+    type: NotFoundError,
+  })
   buscar(@Param('id') id: string): Promise<ConsultaDTO> {
     return this.consultaUseCase.buscarConsultaPorId(id);
   }
 
   @Put('/status/:id')
+  @ApiOperation({ summary: 'Cancelar uma Consulta' })
+  @ApiResponse({
+    status: 200,
+    description: 'Consulta cancelada com sucesso',
+  })
+  @ApiResponse({
+    status: 404,
+    description: 'Consulta informada não existe',
+    type: NotFoundError,
+  })
   async cancelar(
     @Param('id') id: string,
     @Query('status') status: StatusConsulta,
