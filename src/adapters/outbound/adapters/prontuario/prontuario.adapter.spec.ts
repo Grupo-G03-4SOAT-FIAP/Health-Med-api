@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ProntuarioService } from './prontuario.service';
+import { ProntuarioAdapter } from './prontuario.adapter';
 import { ConfigService } from '@nestjs/config';
 import { mockStripe } from 'src/mocks/prontuario.mocks';
 import { mockClient } from 'aws-sdk-client-mock';
@@ -17,15 +17,15 @@ import { buffer } from 'node:stream/consumers';
 jest.mock('@aws-sdk/s3-request-presigner');
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
-describe('ProntuarioService', () => {
-  let prontuarioService: ProntuarioService;
+describe('ProntuarioAdapter', () => {
+  let prontuarioService: ProntuarioAdapter;
   let sub: string;
   let key: string;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
-        ProntuarioService,
+        ProntuarioAdapter,
         {
           provide: ConfigService,
           useFactory: mockStripe,
@@ -33,7 +33,7 @@ describe('ProntuarioService', () => {
       ],
     }).compile();
 
-    prontuarioService = module.get<ProntuarioService>(ProntuarioService);
+    prontuarioService = module.get<ProntuarioAdapter>(ProntuarioAdapter);
     sub = '6a5af77e-0c7d-446e-b9be-9ba53b3b1a13';
     key = 'hackathon-soat.pdf';
   });

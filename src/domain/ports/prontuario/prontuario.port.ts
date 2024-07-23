@@ -1,4 +1,4 @@
-export interface IProntuarioService {
+export interface IProntuarioPort {
   listarArquivos(sub: string): Promise<any[]>;
   compartilharArquivo(key: string, sub: string): Promise<string>;
   enviarArquivo(
@@ -8,4 +8,4 @@ export interface IProntuarioService {
   ): Promise<void>;
 }
 
-export const IProntuarioService = Symbol('IProntuarioService');
+export const IProntuarioPort = Symbol('IProntuarioPort');

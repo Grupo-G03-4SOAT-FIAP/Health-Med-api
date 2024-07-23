@@ -8,12 +8,15 @@ import { ConsultaNaoLocalizada } from 'src/domain/exceptions/consulta.exception'
 import { IConsultaRepository } from 'src/domain/ports/agendamento/consulta.repository.port';
 import { IConsultaUseCase } from 'src/domain/ports/agendamento/consulta.use_case.port';
 import { StatusConsulta } from '../../../utils/statusConsulta.enum';
+import { ITeleconsultaPort } from 'src/domain/ports/teleconsulta/teleconsulta.port';
 
 @Injectable()
 export class ConsultaUseCase implements IConsultaUseCase {
   constructor(
     @Inject(IConsultaRepository)
     private readonly consultaRepository: IConsultaRepository,
+    @Inject(ITeleconsultaPort)
+    private readonly teleconsultaAdapter: ITeleconsultaPort,
   ) {}
 
   async agendarConsulta(
@@ -22,8 +25,7 @@ export class ConsultaUseCase implements IConsultaUseCase {
     const { agendaId, nomePaciente, cpfPaciente, emailPaciente } =
       agendarConsultaDTO;
 
-    // TODO: Gerar link do Google Meet
-    const linkTeleconsulta = 'https://meet.google.com/xxx-yyyy-zzz';
+    const linkTeleconsulta = await this.obterLinkTeleconsulta();
 
     const entidadeConsulta = new ConsultaEntity(
       agendaId,
@@ -89,5 +91,10 @@ export class ConsultaUseCase implements IConsultaUseCase {
     consultaDTO.status = consultaModel.statusConsulta;
 
     return consultaDTO;
+  }
+
+  private async obterLinkTeleconsulta(): Promise<string> {
+    const linkTeleconsulta = this.teleconsultaAdapter.gerarLinkGoogleMeet();
+    return linkTeleconsulta;
   }
 }

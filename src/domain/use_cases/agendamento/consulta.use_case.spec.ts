@@ -10,7 +10,9 @@ import {
   consultaDTOMock,
   consultaModelMock,
   consultaRepositoryMock,
+  teleconsultaAdapterMock,
 } from 'src/mocks/consulta.mock';
+import { ITeleconsultaPort } from 'src/domain/ports/teleconsulta/teleconsulta.port';
 
 describe('ConsultaUseCase', () => {
   let consultaUseCase: ConsultaUseCase;
@@ -19,7 +21,14 @@ describe('ConsultaUseCase', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         ConsultaUseCase,
-        { provide: IConsultaRepository, useValue: consultaRepositoryMock },
+        {
+          provide: IConsultaRepository,
+          useValue: consultaRepositoryMock,
+        },
+        {
+          provide: ITeleconsultaPort,
+          useValue: teleconsultaAdapterMock,
+        },
       ],
     }).compile();
 
@@ -32,6 +41,9 @@ describe('ConsultaUseCase', () => {
   //Validar teste
   it('deve agendar uma consulta com sucesso', async () => {
     consultaRepositoryMock.criarConsulta.mockReturnValue(consultaModelMock);
+    teleconsultaAdapterMock.gerarLinkGoogleMeet.mockReturnValue(
+      consultaModelMock.linkTeleconsulta,
+    );
     const consultaDTO: ConsultaDTO = await consultaUseCase.agendarConsulta(
       agendarConsultaDTOMock,
     );

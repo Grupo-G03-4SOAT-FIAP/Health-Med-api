@@ -40,6 +40,10 @@ export const consultaRepositoryMock = {
   statusConsulta: jest.fn(),
 };
 
+export const teleconsultaAdapterMock = {
+  gerarLinkGoogleMeet: jest.fn(),
+};
+
 export const agendaRepositoryMock = {
   criarConsulta: jest.fn(),
   cancelarConsulta: jest.fn(),
