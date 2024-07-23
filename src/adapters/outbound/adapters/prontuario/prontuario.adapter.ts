@@ -7,10 +7,10 @@ import {
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { IProntuarioService } from 'src/domain/ports/prontuario/prontuario.service.port';
+import { IProntuarioPort } from 'src/domain/ports/prontuario/prontuario.port';
 
 @Injectable()
-export class ProntuarioService implements IProntuarioService {
+export class ProntuarioAdapter implements IProntuarioPort {
   private bucketEndpoint: string;
   private nomeBucketProntuarios: string;
 

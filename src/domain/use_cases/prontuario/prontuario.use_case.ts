@@ -1,19 +1,19 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { IProntuarioService } from 'src/domain/ports/prontuario/prontuario.service.port';
+import { IProntuarioPort } from 'src/domain/ports/prontuario/prontuario.port';
 import { IProntuarioUseCase } from 'src/domain/ports/prontuario/prontuario.use_case.port';
 
 @Injectable()
 export class ProntuarioUseCase implements IProntuarioUseCase {
   constructor(
-    @Inject(IProntuarioService)
-    private readonly prontuarioService: IProntuarioService,
+    @Inject(IProntuarioPort)
+    private readonly prontuarioAdapter: IProntuarioPort,
   ) {}
   async listarArquivos(sub: string): Promise<any[]> {
-    return await this.prontuarioService.listarArquivos(sub);
+    return await this.prontuarioAdapter.listarArquivos(sub);
   }
 
   async compartilharArquivo(key: string, sub: string): Promise<string> {
-    return await this.prontuarioService.compartilharArquivo(key, sub);
+    return await this.prontuarioAdapter.compartilharArquivo(key, sub);
   }
 
   async enviarArquivo(
@@ -21,7 +21,7 @@ export class ProntuarioUseCase implements IProntuarioUseCase {
     fileBuffer: Buffer,
     fileOriginalName: string,
   ): Promise<void> {
-    return await this.prontuarioService.enviarArquivo(
+    return await this.prontuarioAdapter.enviarArquivo(
       sub,
       fileBuffer,
       fileOriginalName,
