@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString } from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 
 export class Horarios {
   @IsString()
@@ -28,6 +28,7 @@ export class Horarios {
 
 export class AgendarHorario {
   @IsString()
+  @IsOptional()
   @ApiProperty({ description: 'Medico ID' })
   medicoId?: string;
 
