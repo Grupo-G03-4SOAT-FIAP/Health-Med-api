@@ -34,7 +34,7 @@ export class ConsultaController {
   @ApiResponse({
     status: 201,
     description: 'Consulta criada com sucesso',
-    type: AgendarConsultaDTO,
+    type: ConsultaDTO,
   })
   @ApiResponse({
     status: 400,
@@ -50,9 +50,14 @@ export class ConsultaController {
     @CognitoUser('username') username: string,
     @CognitoUser('name') name: string,
     @CognitoUser('email') email: string,
-    @Body() consulta: AgendarConsultaDTO,
-  ): Promise<AgendarConsultaDTO> {
-    return await this.consultaUseCase.agendarConsulta(consulta);
+    @Body() agendaId: string,
+  ): Promise<ConsultaDTO> {
+    const agendarConsultaDTO = new AgendarConsultaDTO();
+    agendarConsultaDTO.agendaId = agendaId;
+    agendarConsultaDTO.cpfPaciente = username;
+    agendarConsultaDTO.nomePaciente = name;
+    agendarConsultaDTO.emailPaciente = email;
+    return await this.consultaUseCase.agendarConsulta(agendarConsultaDTO);
   }
 
   @Get(':id')
