@@ -6,6 +6,7 @@ export class ConsultaEntity {
   nomePaciente: string;
   cpfPaciente: string;
   emailPaciente: string;
+  linkTeleconsulta?: string;
   statusConsulta?: StatusConsulta;
 
   constructor(
@@ -13,6 +14,7 @@ export class ConsultaEntity {
     nomePaciente: string,
     cpfPaciente: string,
     emailPaciente: string,
+    linkTeleconsulta?: string,
     statusConsulta?: StatusConsulta,
     id?: string,
   ) {
@@ -21,6 +23,7 @@ export class ConsultaEntity {
     this.nomePaciente = nomePaciente;
     this.cpfPaciente = cpfPaciente;
     this.emailPaciente = emailPaciente;
+    this.linkTeleconsulta = linkTeleconsulta;
     this.statusConsulta = statusConsulta;
   }
 

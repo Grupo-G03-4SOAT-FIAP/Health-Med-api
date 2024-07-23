@@ -4,7 +4,7 @@ import { StatusConsulta } from '../../../../../utils/statusConsulta.enum';
 
 export class AgendarConsultaDTO {
   @IsString()
-  @ApiProperty({ description: 'Agenda ID' })
+  @ApiProperty({ description: 'ID da Agenda' })
   agendaId: string;
 
   @IsString()
@@ -21,21 +21,24 @@ export class AgendarConsultaDTO {
 }
 
 export class ConsultaDTO {
-  @ApiProperty({ description: 'Consulta ID' })
+  @ApiProperty({ description: 'ID da Consulta' })
   id: string;
 
-  @ApiProperty({ description: 'Agenda ID' })
+  @ApiProperty({ description: 'ID da agenda' })
   agendaId: string;
-
-  @ApiProperty({ description: 'Nome do paciente' })
-  nomePaciente: string;
 
   @ApiProperty({ description: 'CPF do paciente' })
   cpfPaciente: string;
 
+  @ApiProperty({ description: 'Nome do paciente' })
+  nomePaciente: string;
+
   @ApiProperty({ description: 'Email do paciente' })
   emailPaciente: string;
 
-  @ApiProperty({ description: 'Status consulta' })
+  @ApiProperty({ description: 'Link para a teleconsulta' })
+  linkTeleconsulta: string;
+
+  @ApiProperty({ description: 'Status da consulta' })
   status: StatusConsulta;
 }
