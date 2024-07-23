@@ -3,22 +3,13 @@ GET http://localhost:3002/health
 
 ##################################################
 
+@AuthorizationMedico=<Coloque o IdToken gerado pelo Cognito aqui>
+@AuthorizationPaciente=<Coloque o IdToken gerado pelo Cognito aqui>
+
+##################################################
+
 @CognitoClientId=<Coloque o Client ID do Cognito aqui>
 # Para provisionar o Cognito na AWS clone o repositório Health-Med-iac e siga as instruções no README
-
-### Fazer login de paciente
-POST https://cognito-idp.us-east-1.amazonaws.com
-Content-Type: application/x-amz-json-1.1
-X-Amz-Target: AWSCognitoIdentityProviderService.InitiateAuth
-
-{
-    "AuthFlow": "USER_PASSWORD_AUTH",
-    "AuthParameters": {
-        "USERNAME": "00000000191",
-        "PASSWORD": "Mudar@123"
-    },
-    "ClientId": "{{CognitoClientId}}"
-}
 
 ### Fazer login de médico
 POST https://cognito-idp.us-east-1.amazonaws.com
@@ -29,6 +20,20 @@ X-Amz-Target: AWSCognitoIdentityProviderService.InitiateAuth
     "AuthFlow": "USER_PASSWORD_AUTH",
     "AuthParameters": {
         "USERNAME": "194528-SP",
+        "PASSWORD": "Mudar@123"
+    },
+    "ClientId": "{{CognitoClientId}}"
+}
+
+### Fazer login de paciente
+POST https://cognito-idp.us-east-1.amazonaws.com
+Content-Type: application/x-amz-json-1.1
+X-Amz-Target: AWSCognitoIdentityProviderService.InitiateAuth
+
+{
+    "AuthFlow": "USER_PASSWORD_AUTH",
+    "AuthParameters": {
+        "USERNAME": "00000000191",
         "PASSWORD": "Mudar@123"
     },
     "ClientId": "{{CognitoClientId}}"
@@ -56,7 +61,7 @@ GET http://localhost:3000/agenda/medico/87299678-a39f-46ff-a849-79c35f561945
 ### Criar horário na agenda do médico
 POST http://localhost:3000/agenda
 Content-Type: application/json
-Authorization: Bearer ???
+Authorization: Bearer {{AuthorizationMedico}}
 
 {
   "data": "2024-07-21",
@@ -68,7 +73,7 @@ Authorization: Bearer ???
 ### Editar horário na agenda do médico
 PUT http://localhost:3000/agenda/d832d9b9-cfd5-4960-8214-c4452800cf94
 Content-Type: application/json
-Authorization: Bearer ???
+Authorization: Bearer {{AuthorizationMedico}}
 
 {
   "data": "2024-07-21",
@@ -79,7 +84,7 @@ Authorization: Bearer ???
 
 ### Excluir horário da agenda do médico
 DELETE http://localhost:3000/agenda/d832d9b9-cfd5-4960-8214-c4452800cf94
-Authorization: Bearer ???
+Authorization: Bearer {{AuthorizationMedico}}
 
 ### Reservar horário na agenda do médico
 PATCH http://localhost:3000/agenda/book/d832d9b9-cfd5-4960-8214-c4452800cf94
@@ -92,7 +97,7 @@ PATCH http://localhost:3000/agenda/free/d832d9b9-cfd5-4960-8214-c4452800cf94
 ### Agendar consulta
 POST http://localhost:3000/consulta
 Content-Type: application/json
-Authorization: Bearer ???
+Authorization: Bearer {{AuthorizationPaciente}}
 
 {
     "agendaId": "6a9d3e75-06e2-4066-aa4a-9c2a5f44ba3f"
@@ -100,3 +105,29 @@ Authorization: Bearer ???
 
 ### Alterar status da consulta
 PUT http://localhost:3000/consulta/status/1dd766b8-b543-4d96-be7f-1ecc3c268312?status=recusada
+
+##################################################
+
+### Listar arquivos no prontuário do paciente
+GET http://localhost:3000/prontuario
+Authorization: Bearer {{AuthorizationPaciente}}
+
+### Compartilhar um arquivo do prontuário
+GET http://localhost:3000/prontuario/share/hackathon-soat.pdf
+Authorization: Bearer {{AuthorizationPaciente}}
+
+### Upload de arquivo
+POST http://localhost:3000/prontuario
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+Authorization: Bearer {{AuthorizationPaciente}}
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"
+
+title
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="hackathon-soat.pdf"
+Content-Type: application/pdf
+
+< ./docs/hackathon-soat.pdf
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

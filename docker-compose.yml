@@ -2,7 +2,7 @@ services:
   db:
     container_name: db
     hostname: db
-    image: postgres
+    image: postgres:15.6
     ports:
       - '5432:5432'
     expose:
@@ -40,17 +40,40 @@ services:
     env_file:
       - .env
     environment:
-      DB_HOST: ${DB_USERNAME:-db}
-      DB_PORT: ${DB_USERNAME:-5432}
+      DB_HOST: db
+      DB_PORT: 5432
       DB_USER: ${DB_USERNAME:-pguser}
       DB_PASSWORD: ${DB_PASSWORD:-pgpwd}
       DB_NAME: ${DB_NAME:-health_med}
       DB_SSL=: ${DB_SSL:-false}
+      COGNITO_USER_POOL_ID: ${COGNITO_USER_POOL_ID:-}
+      COGNITO_CLIENT_ID: ${COGNITO_CLIENT_ID:-}
+      S3_BUCKET_ENDPOINT: http://s3.localhost.localstack.cloud:4566
+      BUCKET_NAME_PRONTUARIOS: ${BUCKET_NAME_PRONTUARIOS:-prontuarios-pacientes}
     restart: always
     networks:
       - default
     depends_on:
       - db
+      - localstack
+
+  localstack:
+    container_name: "${LOCALSTACK_DOCKER_NAME:-localstack-main}"
+    image: localstack/localstack:3.5.0
+    ports:
+      - "127.0.0.1:4566:4566"            # LocalStack Gateway
+      - "127.0.0.1:4510-4559:4510-4559"  # external services port range
+    environment:
+      # LocalStack configuration: https://docs.localstack.cloud/references/configuration/
+      - DEBUG=${DEBUG:-0}
+      - SERVICES=s3
+    volumes:
+      - "./init-aws.sh:/etc/localstack/init/ready.d/init-aws.sh"  # ready hook
+      - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    restart: always
+    networks:
+      - default
 
 networks:
   default:
