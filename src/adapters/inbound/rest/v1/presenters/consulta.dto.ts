@@ -8,12 +8,12 @@ export class AgendarConsultaDTO {
   agendaId: string;
 
   @IsString()
-  @ApiProperty({ description: 'Nome do paciente' })
-  nomePaciente: string;
-
-  @IsString()
   @ApiProperty({ description: 'CPF do paciente' })
   cpfPaciente: string;
+
+  @IsString()
+  @ApiProperty({ description: 'Nome do paciente' })
+  nomePaciente: string;
 
   @IsString()
   @ApiProperty({ description: 'Email do paciente' })

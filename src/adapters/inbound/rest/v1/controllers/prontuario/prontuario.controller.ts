@@ -48,7 +48,6 @@ export class ProntuarioController {
     @UploadedFile() file: Express.Multer.File,
   ) {
     try {
-      console.log(file);
       return await this.prontuarioUseCase.enviarArquivo(
         sub,
         file.buffer,
