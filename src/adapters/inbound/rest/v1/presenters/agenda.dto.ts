@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsOptional, IsString } from 'class-validator';
+import { IsBoolean, IsOptional, IsString } from 'class-validator';
 
 export class Horarios {
   @IsString()
@@ -22,6 +22,7 @@ export class Horarios {
   @ApiProperty({ description: 'Horario final' })
   horaFim?: string;
 
+  @IsBoolean()
   @ApiProperty({ description: 'Status do horario' })
   reservado?: boolean;
 }
@@ -43,4 +44,8 @@ export class AgendarHorario {
   @IsString()
   @ApiProperty({ description: 'Horario final' })
   horaFim?: string;
+
+  @IsBoolean()
+  @ApiProperty({ description: 'Status do horario' })
+  reservado?: boolean;
 }
