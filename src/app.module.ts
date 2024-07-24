@@ -26,11 +26,11 @@ import { ProntuarioController } from './adapters/inbound/rest/v1/controllers/pro
 import { IProntuarioUseCase } from './domain/ports/prontuario/prontuario.use_case.port';
 import { ProntuarioUseCase } from './domain/use_cases/prontuario/prontuario.use_case';
 import { IProntuarioPort } from './domain/ports/prontuario/prontuario.port';
-import { ProntuarioAdapter } from './adapters/outbound/adapters/prontuario/prontuario.adapter';
 import { HealthController } from './adapters/inbound/rest/v1/controllers/health/health.controller';
 import { TerminusModule } from '@nestjs/terminus';
 import { ITeleconsultaPort } from './domain/ports/teleconsulta/teleconsulta.port';
-import { TeleconsultaAdapter } from './adapters/outbound/adapters/teleconsulta/teleconsulta.adapter';
+import { ProntuarioAdapter } from './adapters/outbound/prontuario/prontuario.adapter';
+import { TeleconsultaAdapter } from './adapters/outbound/teleconsulta/teleconsulta.adapter';
 
 @Module({
   imports: [
