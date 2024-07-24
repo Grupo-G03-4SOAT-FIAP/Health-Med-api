@@ -3,6 +3,9 @@ import { ConfigService } from '@nestjs/config';
 import { TeleconsultaAdapter } from './teleconsulta.adapter';
 import { mockStripe } from 'src/mocks/teleconsulta.mocks';
 
+jest.mock('google-auth-library');
+jest.mock('@google-apps/meet');
+
 describe('TeleconsultaAdapter', () => {
   let teleconsultaAdapter: TeleconsultaAdapter;
   let linkTeleconsulta: string;
