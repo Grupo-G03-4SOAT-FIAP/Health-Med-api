@@ -9,7 +9,9 @@ export class TeleconsultaAdapter implements ITeleconsultaPort {
   private creds: string;
 
   constructor(private readonly configService: ConfigService) {
-    this.creds = this.configService.getOrThrow<string>('CREDS');
+    this.creds = this.configService.getOrThrow<string>(
+      'GOOGLE_AUTHORIZED_USER_CREDS',
+    );
   }
   async gerarLinkGoogleMeet(): Promise<string> {
     let linkTeleconsulta = 'https://meet.google.com/xxx-yyyy-zzz';
