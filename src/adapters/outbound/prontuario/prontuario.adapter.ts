@@ -7,10 +7,10 @@ import {
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { IProntuarioService } from 'src/domain/ports/prontuario/prontuario.service.port';
+import { IProntuarioPort } from 'src/domain/ports/prontuario/prontuario.port';
 
 @Injectable()
-export class ProntuarioService implements IProntuarioService {
+export class ProntuarioAdapter implements IProntuarioPort {
   private bucketEndpoint: string;
   private nomeBucketProntuarios: string;
 
@@ -35,7 +35,6 @@ export class ProntuarioService implements IProntuarioService {
 
     try {
       const response = await client.send(command);
-      console.log(response);
       return response.Contents;
     } catch (err) {
       console.error(err);
@@ -61,7 +60,6 @@ export class ProntuarioService implements IProntuarioService {
       if (response) {
         url = await getSignedUrl(client, command, { expiresIn: 3600 });
       }
-      console.log(url);
       return url;
     } catch (err) {
       console.error(err);
@@ -87,8 +85,7 @@ export class ProntuarioService implements IProntuarioService {
     });
 
     try {
-      const response = await client.send(command);
-      console.log(response);
+      await client.send(command);
     } catch (err) {
       console.error(err);
     }

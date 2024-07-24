@@ -11,7 +11,7 @@ export const mockProntuarioUseCase = {
 };
 
 // Mock jest das funções da service de Prontuário
-export const prontuarioServiceMock = {
+export const prontuarioAdapterMock = {
   listarArquivos: jest.fn(),
   compartilharArquivo: jest.fn(),
   enviarArquivo: jest.fn(),

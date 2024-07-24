@@ -15,14 +15,17 @@ export class ConsultaModel {
   @Column({ name: 'agenda_id', nullable: false })
   agendaId: string;
 
-  @Column({ name: 'nome_paciente', length: 100, nullable: false })
-  nomePaciente: string;
-
   @Column({ name: 'cpf_paciente', nullable: false })
   cpfPaciente: string;
 
+  @Column({ name: 'nome_paciente', length: 100, nullable: false })
+  nomePaciente: string;
+
   @Column({ name: 'email_paciente', nullable: false })
   emailPaciente: string;
+
+  @Column({ name: 'link_teleconsulta', nullable: true })
+  linkTeleconsulta: string;
 
   @Column({ name: 'status_consulta', nullable: false })
   statusConsulta: StatusConsulta;

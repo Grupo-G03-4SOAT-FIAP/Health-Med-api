@@ -22,6 +22,8 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.617.0",
     "@aws-sdk/s3-request-presigner": "^3.617.0",
+    "@google-apps/meet": "^0.3.0",
+    "@google-cloud/local-auth": "^2.1.0",
     "@nestjs-cognito/auth": "^1.1.6",
     "@nestjs/axios": "^3.0.2",
     "@nestjs/common": "^10.3.10",

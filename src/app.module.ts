@@ -25,10 +25,12 @@ import { CognitoAuthModule } from '@nestjs-cognito/auth';
 import { ProntuarioController } from './adapters/inbound/rest/v1/controllers/prontuario/prontuario.controller';
 import { IProntuarioUseCase } from './domain/ports/prontuario/prontuario.use_case.port';
 import { ProntuarioUseCase } from './domain/use_cases/prontuario/prontuario.use_case';
-import { IProntuarioService } from './domain/ports/prontuario/prontuario.service.port';
-import { ProntuarioService } from './adapters/outbound/services/prontuario.service';
+import { IProntuarioPort } from './domain/ports/prontuario/prontuario.port';
 import { HealthController } from './adapters/inbound/rest/v1/controllers/health/health.controller';
 import { TerminusModule } from '@nestjs/terminus';
+import { ITeleconsultaPort } from './domain/ports/teleconsulta/teleconsulta.port';
+import { ProntuarioAdapter } from './adapters/outbound/prontuario/prontuario.adapter';
+import { TeleconsultaAdapter } from './adapters/outbound/teleconsulta/teleconsulta.adapter';
 
 @Module({
   imports: [
@@ -93,8 +95,12 @@ import { TerminusModule } from '@nestjs/terminus';
       useClass: ProntuarioUseCase,
     },
     {
-      provide: IProntuarioService,
-      useClass: ProntuarioService,
+      provide: IProntuarioPort,
+      useClass: ProntuarioAdapter,
+    },
+    {
+      provide: ITeleconsultaPort,
+      useClass: TeleconsultaAdapter,
     },
   ],
 })

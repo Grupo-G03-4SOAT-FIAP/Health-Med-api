@@ -8,9 +8,10 @@ import { StatusConsulta } from '../utils/statusConsulta.enum';
 export const consultaModelMock: ConsultaModel = {
   id: '12345678-1234-1234-1234-123456789012',
   agendaId: '11111111-1111-1111-1111-111111111111',
-  nomePaciente: 'John Doe',
   cpfPaciente: '12345678901',
+  nomePaciente: 'John Doe',
   emailPaciente: 'john.doe@example.com',
+  linkTeleconsulta: 'https://meet.google.com/xxx-yyyy-zzz',
   statusConsulta: StatusConsulta.AGENDADA,
   criadoEm: new Date().toISOString(),
   atualizadoEm: new Date().toISOString(),
@@ -19,16 +20,17 @@ export const consultaModelMock: ConsultaModel = {
 export const consultaDTOMock: ConsultaDTO = {
   id: '12345678-1234-1234-1234-123456789012',
   agendaId: '11111111-1111-1111-1111-111111111111',
-  nomePaciente: 'John Doe',
   cpfPaciente: '12345678901',
+  nomePaciente: 'John Doe',
   emailPaciente: 'john.doe@example.com',
+  linkTeleconsulta: 'https://meet.google.com/xxx-yyyy-zzz',
   status: StatusConsulta.AGENDADA,
 };
 
 export const agendarConsultaDTOMock: AgendarConsultaDTO = {
   agendaId: '11111111-1111-1111-1111-111111111111',
-  nomePaciente: 'John Doe',
   cpfPaciente: '12345678901',
+  nomePaciente: 'John Doe',
   emailPaciente: 'john.doe@example.com',
 };
 
@@ -36,6 +38,10 @@ export const consultaRepositoryMock = {
   criarConsulta: jest.fn(),
   buscarConsultaPorId: jest.fn(),
   statusConsulta: jest.fn(),
+};
+
+export const teleconsultaAdapterMock = {
+  gerarLinkGoogleMeet: jest.fn(),
 };
 
 export const agendaRepositoryMock = {
