@@ -9,7 +9,7 @@ export class TeleconsultaAdapter implements ITeleconsultaPort {
   private creds: string;
 
   constructor(private readonly configService: ConfigService) {
-    this.creds = this.configService.getOrThrow<string>(
+    this.creds = this.configService.get<string>(
       'GOOGLE_AUTHORIZED_USER_CREDS',
     );
   }
