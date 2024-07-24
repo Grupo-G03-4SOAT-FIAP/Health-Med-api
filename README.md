@@ -94,20 +94,20 @@ Para testar o agendamento de consultas com o Google Meet siga o passo a passo di
 ### Criar projeto no Console do Google Cloud
 
 1. Crie um projeto chamado `Health-Med` no [Console do Google Cloud](https://console.cloud.google.com/projectcreate);
-2. No Console do Google Cloud, acesse [APIs e Serviços](https://console.cloud.google.com/apis/dashboard) e clique no botão *+ Ativar APIs e serviços*;
+2. No Console do Google Cloud, acesse [APIs e Serviços](https://console.cloud.google.com/apis/dashboard) e clique no botão **+ Ativar APIs e serviços**;
 3. Procure pela Google Meet REST API na lista e clique em ATIVAR;
-4. No menu do lado esquerdo da tela, clique em *Credenciais*;
-5. Clique no botão *+ Criar credenciais* e escolha a opção "ID do cliente OAuth";
+4. No menu do lado esquerdo da tela, clique em Credenciais;
+5. Clique no botão **+ Criar credenciais** e escolha a opção "ID do cliente OAuth";
 6. CLique no botão CONFIGURAR TELA DE CONSENTIMENTO e escolha opção "Externo" e clique em CRIAR;
 7. Na tela "Informações do app" preencha os dados do aplicativo como nome do app, e-mail para suporte, logotipo do app, dados de contato do desenvolvedor, etc. Clique no botão SALVAR E CONTINUAR;
 8. Na guia "Escopos" clique no botão ADICIONAR OU REMOVER ESCOPOS e selecione a opção `https://www.googleapis.com/auth/meetings.space.created` na lista. Clique no botão SALVAR E CONTINUAR;
-9. Na guia "Usuários de teste" clique no botão + ADD USERS e adicione o seu endereço de e-mail pessoal do @gmail.com. Depois clique no botão SALVAR E CONTINUAR;
+9. Na guia "Usuários de teste" clique no botão **+ ADD USERS** e adicione o seu endereço de e-mail pessoal do @gmail.com. Depois clique no botão SALVAR E CONTINUAR;
 10. Clique no botão VOLTAR PARA O PAINEL.
 
 ### Obter um ID do cliente OAuth 2.0
 
-1. No menu do lado esquerdo da tela, clique em *Credenciais*;
-2. Clique no botão *+ Criar credenciais* e escolha a opção "ID do cliente OAuth";
+1. No menu do lado esquerdo da tela, clique em Credenciais;
+2. Clique no botão **+ Criar credenciais** e escolha a opção "ID do cliente OAuth";
 3. Em "Tipo de aplicativo" selecione "App para computador" e clique no botão CRIAR.
 4. Anote o `ID do cliente` e a `Chave secreta do cliente` e clique no botão BAIXAR O JSON;
 
@@ -116,23 +116,20 @@ Para testar o agendamento de consultas com o Google Meet siga o passo a passo di
 1. Visite a página [Guia de início rápido do Node.js](https://developers.google.com/meet/api/guides/quickstart/nodejs);
 2. Execute [código de amostra](https://developers.google.com/meet/api/guides/quickstart/nodejs?hl=pt-br) na sua máquina local;
 > Copie o arquivo JSON que você baixou anteriormente na mesma pasta onde se encontra o arquivo `index.js`. Renomeie o arquivo JSON para `credentials.json`
-3. Execute o [código de amostra](https://developers.google.com/meet/api/guides/quickstart/nodejs?hl=pt-br) usando o comando `node .`;
+3. Execute o [código de amostra](https://developers.google.com/meet/api/guides/quickstart/nodejs?hl=pt-br) usando o comando `node .`
 4. Ao executar o [código de amostra](https://developers.google.com/meet/api/guides/quickstart/nodejs?hl=pt-br) será solicitado que você faça login com a sua Conta do Google pessoal;
-5. Logo após, será gerado um arquivo chamado `token.json` no mesmo diretório onde se encontra o arquivo `index.js`;
+5. Logo após, será gerado um arquivo chamado `token.json` no mesmo diretório onde se encontra o arquivo `index.js`
 
-> [!TIP]
 > O [código de amostra](https://developers.google.com/meet/api/guides/quickstart/nodejs?hl=pt-br) também está disponível no GitHub em https://github.com/googleworkspace/node-samples/blob/main/meet/quickstart/index.js
 
-> [!TIP]
 > Também é possível fazer autenticação usando Contas de Serviço ao invés de IDs do cliente OAuth 2.0, porém é necessário possuir uma conta Business (paga) do Google Workspaces com CNPJ para configurar o [domain-wide delegation](https://support.google.com/a/answer/162106?hl=en) conforme instruções disponíveis [aqui](https://medium.com/iceapple-tech-talks/integration-with-google-calendar-api-using-service-account-1471e6e102c8).
 
 ### Informe as credenciais na aplicação
 
 1. Abra o arquivo `token.json` e copie todo o seu conteúdo;
-2. Abra o arquivo `.env` e cole o conteúdo do arquivo token.json na variável de ambiente `GOOGLE_AUTHORIZED_USER_CREDS`, entre aspas simples `' '`;
+2. Abra o arquivo `.env` e cole o conteúdo do arquivo token.json na variável de ambiente `GOOGLE_AUTHORIZED_USER_CREDS`, entre aspas simples `' '`
 3. Execute a aplição.
 
-> [!WARNING]
 > O token obtido no arquivo token.json vence depois de algum tempo, sendo necessário gerar outro token novamente usando o [código de amostra](https://developers.google.com/meet/api/guides/quickstart/nodejs?hl=pt-br) conforme as instruções disponíveis acima.
 
 </details>
