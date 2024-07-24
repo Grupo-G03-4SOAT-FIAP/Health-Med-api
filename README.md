@@ -124,12 +124,12 @@ Para testar o agendamento de consultas com o Google Meet siga o passo a passo di
 > O [código de amostra](https://developers.google.com/meet/api/guides/quickstart/nodejs?hl=pt-br) também está disponível no GitHub em https://github.com/googleworkspace/node-samples/blob/main/meet/quickstart/index.js
 
 > [!TIP]
-> Também é possível fazer autenticação usando Contas de Serviço ao invés de IDs do cliente OAuth 2.0, porém é necessário possuir uma conta Business (paga) do Google Workspaces, com CNPJ, para configurar o [domain-wide delegation](https://support.google.com/a/answer/162106?hl=en) conforme instruções disponíveis [aqui](https://medium.com/iceapple-tech-talks/integration-with-google-calendar-api-using-service-account-1471e6e102c8).
+> Também é possível fazer autenticação usando Contas de Serviço ao invés de IDs do cliente OAuth 2.0, porém é necessário possuir uma conta Business (paga) do Google Workspaces com CNPJ para configurar o [domain-wide delegation](https://support.google.com/a/answer/162106?hl=en) conforme instruções disponíveis [aqui](https://medium.com/iceapple-tech-talks/integration-with-google-calendar-api-using-service-account-1471e6e102c8).
 
 ### Informe as credenciais na aplicação
 
 1. Abra o arquivo `token.json` e copie todo o seu conteúdo;
-2. Abra o arquivo `.env` e cole o conteúdo do arquivo token.json na variável de ambiente `CREDS`, entre aspas simples `' '`;
+2. Abra o arquivo `.env` e cole o conteúdo do arquivo token.json na variável de ambiente `GOOGLE_AUTHORIZED_USER_CREDS`, entre aspas simples `' '`;
 3. Execute a aplição.
 
 > [!WARNING]
