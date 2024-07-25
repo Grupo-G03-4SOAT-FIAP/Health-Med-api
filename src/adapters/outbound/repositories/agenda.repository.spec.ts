@@ -7,6 +7,7 @@ import {
   mockAgendaModel,
   mockHorario,
 } from 'src/mocks/agenda.mock';
+import { AgendaOcupada } from 'src/domain/exceptions/agenda.exception';
 
 describe('AgendaRepository', () => {
   let agendaRepository: AgendaRepository;
@@ -36,6 +37,15 @@ describe('AgendaRepository', () => {
 
     expect(agendaTypeORMMock.save).toHaveBeenCalledWith(mockHorario);
     expect(result).toBe(mockAgendaModel);
+  });
+
+  it('deve retornar um conflito ao tentar criar uma agenda com uma data já registrada', async () => {
+    agendaTypeORMMock.findOne.mockReturnValue(Promise.resolve(mockAgendaModel));
+    expect(agendaRepository.criarAgenda(mockHorario)).rejects.toThrow(
+      new AgendaOcupada(
+        'Horário já está ocupado no mesmo dia para este médico',
+      ),
+    );
   });
 
   it('deve atualizar agenda', async () => {
