@@ -1,5 +1,4 @@
 import {
-  BadRequestException,
   Body,
   Controller,
   Delete,
@@ -43,7 +42,7 @@ export class AgendaController {
   })
   @ApiResponse({
     status: 409,
-    description: 'Existe uma Agenda com esse dado',
+    description: 'Horário já está ocupado no mesmo dia para este médico',
     type: ConflictError,
   })
   async criar(
@@ -54,7 +53,9 @@ export class AgendaController {
       horario.medicoId = customId;
       return await this.agendaUseCase.criarAgenda(horario);
     } catch (error) {
-      throw new BadRequestException(error.message);
+      if (error) {
+        throw error;
+      }
     }
   }
 

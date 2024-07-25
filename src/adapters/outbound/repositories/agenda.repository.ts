@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { Horarios } from 'src/adapters/inbound/rest/v1/presenters/agenda.dto';
 import { IAgendaRepository } from 'src/domain/ports/agendamento/agenda.repository.port';
 import { AgendaModel } from '../models/agenda.model';
+import { AgendaOcupada } from 'src/domain/exceptions/agenda.exception';
 
 @Injectable()
 export class AgendaRepository implements IAgendaRepository {
@@ -25,7 +26,9 @@ export class AgendaRepository implements IAgendaRepository {
     });
 
     if (horarioExistente) {
-      throw new Error('Horário já está ocupado no mesmo dia para este médico.');
+      throw new AgendaOcupada(
+        'Horário já está ocupado no mesmo dia para este médico',
+      );
     }
     return await this.repository.save(horario);
   }
