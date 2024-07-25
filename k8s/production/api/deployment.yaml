@@ -65,11 +65,11 @@ spec:
                 secretKeyRef:
                   name: cognito-secret
                   key: COGNITO_CLIENT_ID
-            - name: GOOGLE_MEET_API_KEY
+            - name: GOOGLE_AUTHORIZED_USER_CREDS
               valueFrom:
                 secretKeyRef:
                   name: google-meet-secret
-                  key: GOOGLE_MEET_API_KEY
+                  key: GOOGLE_AUTHORIZED_USER_CREDS
             - name: NOME_FILA_EXEMPLO
               valueFrom:
                 secretKeyRef:
