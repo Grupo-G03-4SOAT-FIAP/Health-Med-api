@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" version="24.7.4">
   <diagram name="Página-1" id="QyuDZeAoyNbm0Pvu70TN">
-    <mxGraphModel dx="4419" dy="1509" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="5425" dy="2058" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -448,7 +448,7 @@
         <mxCell id="aZ776irZEMooX4o-13bk-180" value="🛈 O API Gateway&amp;nbsp;fará a autenticação dos Médicos e Pacientes em conjunto com o Cognito como authorizer." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Lucida Console;" parent="L6SBvmUNMrdH3GEFA7w_-1" vertex="1">
           <mxGeometry x="1560" y="560" width="400" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="aZ776irZEMooX4o-13bk-181" value="🛈 A solução de SIEM do Amazon GuardDuty monitora a conta e os workloads para detectar atividades mal-intencionadas em tempo real." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=top;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Lucida Console;" parent="L6SBvmUNMrdH3GEFA7w_-1" vertex="1">
+        <mxCell id="aZ776irZEMooX4o-13bk-181" value="🛈 O Amazon GuardDuty monitora a conta e os workloads para detectar atividades mal-intencionadas em tempo real." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=top;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Lucida Console;" parent="L6SBvmUNMrdH3GEFA7w_-1" vertex="1">
           <mxGeometry x="2240" y="120" width="360" height="230" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-187" value="SNS" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sns;" parent="L6SBvmUNMrdH3GEFA7w_-1" vertex="1">
