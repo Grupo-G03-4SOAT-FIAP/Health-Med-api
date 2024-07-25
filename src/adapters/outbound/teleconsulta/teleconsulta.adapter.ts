@@ -9,7 +9,7 @@ export class TeleconsultaAdapter implements ITeleconsultaPort {
   private creds: string;
 
   constructor(private readonly configService: ConfigService) {
-    this.creds = this.configService.getOrThrow<string>(
+    this.creds = this.configService.get<string>(
       'GOOGLE_AUTHORIZED_USER_CREDS',
     );
   }
@@ -33,7 +33,10 @@ export class TeleconsultaAdapter implements ITeleconsultaPort {
       };
 
       const response = await meetClient.createSpace(request);
-      linkTeleconsulta = response[0].meetingUri;
+
+      if (response) {
+        linkTeleconsulta = response[0].meetingUri;
+      }
     } catch (error) {
       console.error(error);
     }
