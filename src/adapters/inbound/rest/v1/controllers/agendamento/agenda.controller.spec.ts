@@ -1,7 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AgendaController } from './agenda.controller';
 import { IAgendaUseCase } from 'src/domain/ports/agendamento/agenda.use_case.port';
-import { BadRequestException } from '@nestjs/common';
 import { mockAgendaUseCase } from 'src/mocks/agenda.mock';
 import { CognitoTestingModule } from '@nestjs-cognito/testing';
 
