@@ -214,12 +214,12 @@ Cloud provider: AWS
 
 *Mais detalhes sobre a motivação para adoção de cada serviço de nuvem estão disponíveis no diagrama.*
 
-![Diagrama de Arquitetura Cloud](./docs/arquitetura-cloud/dark/arquitetura-cloud.drawio.png)
+![Diagrama de Arquitetura Cloud](./docs/arquitetura-cloud/dark/arquitetura-cloud.drawio.svg?raw=true)
 
 *Clique na imagem para ampliar.*
 
 > [!TIP]
-> Uma versão em alta definição do diagrama está disponível na pasta `\docs\arquitetura-cloud`
+> Uma versão em alta definição do diagrama está disponível em formato SVG na pasta `\docs\arquitetura-cloud`
 
 ## Como contribuir
 
