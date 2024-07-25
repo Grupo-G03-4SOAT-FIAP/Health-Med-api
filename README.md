@@ -85,9 +85,9 @@ Para mais informações visite a página [Boas práticas para secrets do Kuberne
 
 <details>
 
-<summary>Como testar o agendamento com Google Meet?</summary>
+<summary>Como testar as teleconsultas com o Google Meet?</summary>
 
-## Instruções para testar o agendamento de consultas com o Google Meet
+## Instruções para testar as teleconsultas com o Google Meet
 
 Para testar o agendamento de consultas com o Google Meet siga o passo a passo disponível no [Guia de início rápido do Node.js](https://developers.google.com/meet/api/guides/quickstart/nodejs) no portal Google for Developers.
 
@@ -156,31 +156,69 @@ Você pode conectar-se a instância de banco de dados PostgreSQL usando o [pgAdm
 
 ## Documentação
 
-### Arquitetura de Aplicação
+A documentação do projeto está disponível no [GitHub Wiki](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki).
+
+## Arquitetura de Aplicação
 
 Architectural Pattern: [Modular Monolith](https://www.milanjovanovic.tech/blog/what-is-a-modular-monolith) + [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/)
 
-![arquitetura-de-aplicacao](https://github.com/user-attachments/assets/48c77bcc-2db1-4827-83a4-fa81a9c59c78)
+![Arquitetura de Aplicacao](./docs/arquitetura-de-aplicacao/arquitetura-de-aplicacao.png)
+
+*Clique na imagem para ampliar.*
 
 <details>
 
-<summary>Por que optamos por um Modular Monolith?</summary>
+<summary>Por que optamos por um Monolito Modular?</summary>
 
 ## Modular Monolith
 
 > "Você não deve iniciar um novo projeto com microsserviços, mesmo se tiver certeza de que seu aplicativo será grande o suficiente para valer a pena." — [Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html#:~:text=you%20shouldn%27t%20start%20a%20new%20project%20with%20microservices%2C%20even%20if%20you%27re%20sure%20your%20application%20will%20be%20big%20enough%20to%20make%20it%20worthwhile.)
 
-*No contexto da Health&Med, neste primeiro momento onde a startup está dando início ao desenvolvendo de um novo mínimo produto viável, entendemos que partir diretamente para uma arquitetura de microsserviços não seria o ideal. Ao optar por um monolito modular temos o melhor dos dois mundos: A simplicidade e facilidade de gerenciamento de um monolito aliada a modularidade, flexibilidade e baixo acoplamento dos microsserviços. Ao optar por um monolito modular a aplicação é dividida internamente em módulos desacoplados que podem ser facilmente decompostos em microsserviços no futuro, quando a empresa crescer e a equipe aumentar de tamanho.*
+*Ao optar por um monolito modular temos o melhor dos dois mundos: A simplicidade e facilidade de gerenciamento de um monolito aliada a modularidade, flexibilidade e baixo acoplamento dos microsserviços. Leia mais sobre as motivações para implementação de um monolito modular em [Decisão de Arquitetura para o MVP da Health&Med](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-o-MVP-da-Health&Med) na documentação.*
 
 </details>
 
-### Arquitetura Cloud
+<details>
+
+<summary>Por que optamos pelo Modelo Relacional?</summary>
+
+## Modelo Relacional
+
+*Entendemos que o modelo relacional é o que mais se adequa ao nosso problema de negócio, contexto atual e requisitos na API da Health&Med. Leia mais sobre as motivações para adoção do modelo relacional em [Decisão de Arquitetura para Banco de Dados da Health&Med](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-Banco-de-Dados-da-Health&Med) na documentação.*
+
+</details>
+
+<details>
+
+<summary>Por que optamos por uma SAGA Coreografada?</summary>
+
+## SAGA Coreografada
+
+*Devido a pequena quantidade de membros, optamos pela SAGA coreografada, conforme recomendado por Chris Richardson no livro "[Microservices Patterns](https://www.amazon.com.br/Microservice-Patterns-examples-Chris-Richardson/dp/1617294543)". Leia mais sobre as motivações para implementação de uma SAGA coreografada em [Decisão de Arquitetura para SAGA da Health&Med](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-SAGA-da-Health&Med) na documentação.*
+
+</details>
+
+<details>
+
+<summary>Por que optamos por um BFF?</summary>
+
+## Backend for Frontend
+
+*O API Gateway como BFF funciona como um único ponto de entrada para o(s) front-end(s), que não precisam conhecer o endereço de cada um dos serviços no backend. Outra grande vantagem é também a autenticação, realizada pelo próprio API Gateway em conjunto com algum IdP. Leia mais sobre as motivações para implementação do BFF em [Decisão de Arquitetura para o BFF na Health&Med](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-o-BFF-na-Health&Med) na documentação.*
+
+</details>
+
+## Arquitetura Cloud
 
 Cloud provider: AWS
 
-![arquitetura-cloud drawio](https://github.com/user-attachments/assets/786abbc1-c27d-4419-a2f8-df2de9c98f34)
+*Mais detalhes sobre a motivação para adoção de cada serviço de nuvem estão disponíveis no diagrama.*
+
+![Diagrama de Arquitetura Cloud](./docs/arquitetura-cloud/dark/arquitetura-cloud.drawio.svg?raw=true)
+
 *Clique na imagem para ampliar.*
 
+> [!TIP]
 > Uma versão em alta definição do diagrama está disponível na pasta `\docs\arquitetura-cloud`
 
 ## Como contribuir
