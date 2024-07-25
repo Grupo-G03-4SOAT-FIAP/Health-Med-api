@@ -1,10 +1,10 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" version="24.7.4">
   <diagram name="Página-1" id="QyuDZeAoyNbm0Pvu70TN">
-    <mxGraphModel dx="7580" dy="3234" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4419" dy="1509" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="L6SBvmUNMrdH3GEFA7w_-1" value="AWS Cloud" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" parent="1" vertex="1">
+        <mxCell id="L6SBvmUNMrdH3GEFA7w_-1" value="AWS Cloud" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=default;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" parent="1" vertex="1">
           <mxGeometry x="-480" y="40" width="2880" height="3600" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-103" value="AWS Edge Services" style="fillColor=none;strokeColor=#5A6C86;dashed=1;verticalAlign=top;fontStyle=0;fontColor=#5A6C86;whiteSpace=wrap;html=1;" parent="L6SBvmUNMrdH3GEFA7w_-1" vertex="1">
@@ -448,8 +448,8 @@
         <mxCell id="aZ776irZEMooX4o-13bk-180" value="🛈 O API Gateway&amp;nbsp;fará a autenticação dos Médicos e Pacientes em conjunto com o Cognito como authorizer." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Lucida Console;" parent="L6SBvmUNMrdH3GEFA7w_-1" vertex="1">
           <mxGeometry x="1560" y="560" width="400" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="aZ776irZEMooX4o-13bk-181" value="🛈 A solução de SIEM do Amazon GuardDuty monitora a contas e os workloads para detectar atividades mal-intencionadas." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=top;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Lucida Console;" parent="L6SBvmUNMrdH3GEFA7w_-1" vertex="1">
-          <mxGeometry x="2280" y="120" width="320" height="230" as="geometry" />
+        <mxCell id="aZ776irZEMooX4o-13bk-181" value="🛈 A solução de SIEM do Amazon GuardDuty monitora a conta e os workloads para detectar atividades mal-intencionadas em tempo real." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=top;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Lucida Console;" parent="L6SBvmUNMrdH3GEFA7w_-1" vertex="1">
+          <mxGeometry x="2240" y="120" width="360" height="230" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-187" value="SNS" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sns;" parent="L6SBvmUNMrdH3GEFA7w_-1" vertex="1">
           <mxGeometry x="2638" y="1555" width="50" height="50" as="geometry" />
@@ -497,7 +497,7 @@
           <mxGeometry x="520" y="2240" width="240" height="710" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-132" value="IAM" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.identity_and_access_management;" parent="L6SBvmUNMrdH3GEFA7w_-1" vertex="1">
-          <mxGeometry x="2750" y="3400" width="50" height="50" as="geometry" />
+          <mxGeometry x="2710" y="3400" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="_RXdKCglyneSRyfY8CZ5-12" value="AWS&amp;nbsp;GuardDuty" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.guardduty;" vertex="1" parent="L6SBvmUNMrdH3GEFA7w_-1">
           <mxGeometry x="2670" y="120" width="50" height="50" as="geometry" />
@@ -506,7 +506,7 @@
           <mxGeometry x="1880" y="2960" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="_RXdKCglyneSRyfY8CZ5-11" value="🛈 O IAM é peça fundamental na implementação da estratégia de segurança Zero Trust na nuvem, restringindo o acesso aos recursos." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=top;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Lucida Console;" vertex="1" parent="L6SBvmUNMrdH3GEFA7w_-1">
-          <mxGeometry x="2360" y="3400" width="360" height="80" as="geometry" />
+          <mxGeometry x="2320" y="3400" width="360" height="80" as="geometry" />
         </mxCell>
         <mxCell id="_RXdKCglyneSRyfY8CZ5-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;flowAnimation=1;" edge="1" parent="L6SBvmUNMrdH3GEFA7w_-1" source="aZ776irZEMooX4o-13bk-105" target="aZ776irZEMooX4o-13bk-11">
           <mxGeometry relative="1" as="geometry" />
