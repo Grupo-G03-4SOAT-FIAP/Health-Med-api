@@ -53,7 +53,9 @@ export class AgendaController {
       horario.medicoId = customId;
       return await this.agendaUseCase.criarAgenda(horario);
     } catch (error) {
-      throw error;
+      if (error) {
+        throw error;
+      }
     }
   }
 
