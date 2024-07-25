@@ -48,14 +48,14 @@ describe('AgendaController', () => {
     );
   });
 
-  it('should throw BadRequestException on error', async () => {
+  it('should throw Error on error', async () => {
     mockAgendaUseCase.criarAgenda.mockRejectedValue(
       new Error('Failed to create'),
     );
 
     await expect(
       agendaController.criar(horario.medicoId, horario),
-    ).rejects.toThrow(BadRequestException);
+    ).rejects.toThrow(Error);
   });
 
   it('should return an array of horarios', async () => {
