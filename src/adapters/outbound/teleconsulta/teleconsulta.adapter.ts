@@ -33,7 +33,10 @@ export class TeleconsultaAdapter implements ITeleconsultaPort {
       };
 
       const response = await meetClient.createSpace(request);
-      linkTeleconsulta = response[0].meetingUri;
+
+      if (response) {
+        linkTeleconsulta = response[0].meetingUri;
+      }
     } catch (error) {
       console.error(error);
     }
