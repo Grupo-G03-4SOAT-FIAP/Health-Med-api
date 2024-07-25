@@ -168,7 +168,9 @@ Architectural Pattern: [Modular Monolith](https://www.milanjovanovic.tech/blog/w
 
 ## Modular Monolith
 
-Ao optar por um monolito modular... [colocar explicação aqui]
+> "Você não deve iniciar um novo projeto com microsserviços, mesmo se tiver certeza de que seu aplicativo será grande o suficiente para valer a pena." — [Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html#:~:text=you%20shouldn%27t%20start%20a%20new%20project%20with%20microservices%2C%20even%20if%20you%27re%20sure%20your%20application%20will%20be%20big%20enough%20to%20make%20it%20worthwhile.)
+
+*No contexto da Health&Med, neste primeiro momento onde a startup está dando início ao desenvolvendo de um novo mínimo produto viável, entendemos que partir diretamente para uma arquitetura de microsserviços não seria o ideal. Ao optar por um monolito modular temos o melhor dos dois mundos: A simplicidade e facilidade de gerenciamento de um monolito aliada a modularidade, flexibilidade e baixo acoplamento dos microsserviços. Ao optar por um monolito modular a aplicação é dividida internamente em módulos desacoplados que podem ser facilmente decompostos em microsserviços no futuro, quando a empresa crescer e a equipe aumentar de tamanho.*
 
 </details>
 
@@ -178,6 +180,8 @@ Cloud provider: AWS
 
 ![arquitetura-cloud drawio](https://github.com/user-attachments/assets/786abbc1-c27d-4419-a2f8-df2de9c98f34)
 *Clique na imagem para ampliar.*
+
+> Uma versão em alta definição do diagrama está disponível na pasta `\docs\arquitetura-cloud`
 
 ## Como contribuir
 
