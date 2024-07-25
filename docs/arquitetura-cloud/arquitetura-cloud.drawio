@@ -1,11 +1,11 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" version="24.7.4">
   <diagram name="Página-1" id="QyuDZeAoyNbm0Pvu70TN">
-    <mxGraphModel dx="3728" dy="1132" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="9950" dy="4528" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="L6SBvmUNMrdH3GEFA7w_-1" value="AWS Cloud" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=default;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" parent="1" vertex="1">
-          <mxGeometry x="-480" y="40" width="2880" height="3600" as="geometry" />
+          <mxGeometry x="-480" y="361" width="2880" height="3600" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-103" value="AWS Edge Services" style="fillColor=none;strokeColor=#5A6C86;dashed=1;verticalAlign=top;fontStyle=0;fontColor=#5A6C86;whiteSpace=wrap;html=1;" parent="L6SBvmUNMrdH3GEFA7w_-1" vertex="1">
           <mxGeometry x="700" y="220" width="280" height="320" as="geometry" />
@@ -526,139 +526,139 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-1" value="Médicos e Pacientes" style="sketch=0;outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.illustration_users;pointerEvents=1" parent="1" vertex="1">
-          <mxGeometry x="-1140" y="470" width="100" height="100" as="geometry" />
+          <mxGeometry x="-1120" y="791" width="100" height="100" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-2" value="" style="sketch=0;outlineConnect=0;gradientColor=none;fontColor=#545B64;strokeColor=none;fillColor=#879196;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.illustration_devices;pointerEvents=1" parent="1" vertex="1">
-          <mxGeometry x="-1030" y="480" width="109.59" height="80" as="geometry" />
+          <mxGeometry x="-1030" y="801" width="109.59" height="80" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;flowAnimation=1;" parent="1" source="aZ776irZEMooX4o-13bk-2" target="aZ776irZEMooX4o-13bk-52" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-750" y="536" as="targetPoint" />
+            <mxPoint x="-750" y="857" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-5" value="DIAGRAMA DE ARQUITETURA CLOUD" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;textShadow=1;fontSize=16;fontFamily=Lucida Console;shadow=1;" parent="1" vertex="1">
-          <mxGeometry x="-1120" y="80" width="320" height="30" as="geometry" />
+          <mxGeometry x="-1120" y="401" width="320" height="30" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-6" value="Cliente: Health&amp;amp;Med&lt;div&gt;Versão: v0.1&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" parent="1" vertex="1">
-          <mxGeometry x="-1120" y="120" width="320" height="60" as="geometry" />
+          <mxGeometry x="-1120" y="441" width="320" height="60" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-8" value="GitHub" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.github_code;pointerEvents=1;" parent="1" vertex="1">
-          <mxGeometry x="2760" y="1954" width="50" height="50" as="geometry" />
+          <mxGeometry x="2760" y="2275" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;flowAnimation=1;" parent="1" source="aZ776irZEMooX4o-13bk-52" target="aZ776irZEMooX4o-13bk-10" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-680.0000000000005" y="620.0000000000005" as="sourcePoint" />
+            <mxPoint x="-680.0000000000005" y="941.0000000000005" as="sourcePoint" />
             <Array as="points">
-              <mxPoint x="-160" y="520" />
-              <mxPoint x="-160" y="424" />
+              <mxPoint x="-160" y="841" />
+              <mxPoint x="-160" y="745" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-52" value="Public Internet" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.globe;" parent="1" vertex="1">
-          <mxGeometry x="-720" y="496" width="48" height="48" as="geometry" />
+          <mxGeometry x="-720" y="817" width="48" height="48" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="aZ776irZEMooX4o-13bk-8" target="aZ776irZEMooX4o-13bk-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-127" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;🛈&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;O workflow de CI/CD no GitHub Actions faz apply do plano de execução do Terraform após aprovação da PR e análise estática no SonarCloud.&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;🛈 O state do Terraform é armazenado e gerenciado pelo Terraform Cloud.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;🛈 A AWS provê todos os recursos para que possamos adequar a solução a Lei Geral de Proteção de Dados Pessoais (LGPD) e também a HIPAA – Lei de portabilidade e responsabilidade de provedores de saúde de 1996 dos EUA.&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Lucida Console;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="-1120" y="200" width="400" height="200" as="geometry" />
+          <mxGeometry x="-1120" y="521" width="400" height="200" as="geometry" />
         </mxCell>
         <mxCell id="L6SBvmUNMrdH3GEFA7w_-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.005;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;flowAnimation=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="aZ776irZEMooX4o-13bk-165" target="L6SBvmUNMrdH3GEFA7w_-17" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-139" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="-480" y="3759" width="1040" height="840" as="geometry" />
+          <mxGeometry x="-480" y="4200" width="1040" height="840" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-140" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
-          <mxGeometry x="-77.5" y="3849" width="245.5" height="670" as="geometry" />
+          <mxGeometry x="-77.5" y="4290" width="245.5" height="670" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-141" value="HorizontalPodAutoscaler&lt;br&gt;(name: health-med-api)&lt;br&gt;&lt;div&gt;minReplicas: 1&lt;/div&gt;&lt;div&gt;maxReplicas: 100&lt;/div&gt;" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=hpa;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="-310" y="4319" width="50" height="48" as="geometry" />
+          <mxGeometry x="-310" y="4760" width="50" height="48" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-142" value="ConfigMap&lt;br&gt;(name: health-med-api-config)" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;prIcon=cm;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="-310" y="3979" width="50" height="48" as="geometry" />
+          <mxGeometry x="-310" y="4420" width="50" height="48" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-143" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="-58.870000000000005" y="3949" width="207.75" height="470" as="geometry" />
+          <mxGeometry x="-58.870000000000005" y="4390" width="207.75" height="470" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-144" value="Namespace&lt;br&gt;(name: health-med)" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=ns;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="20" y="3729" width="50" height="48" as="geometry" />
+          <mxGeometry x="20" y="4170" width="50" height="48" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-145" value="ReplicaSet&lt;br&gt;replicas: 3" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=rs;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="20" y="3919" width="50" height="48" as="geometry" />
+          <mxGeometry x="20" y="4360" width="50" height="48" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-146" value="🛈&amp;nbsp;O ReplicaSet de nome health-med-api é gerenciado pelo Deployment de mesmo nome logo acima.&lt;br&gt;&lt;br&gt;🛈 O ConfigMap de nome health-med-api-config armazena variáveis de ambiente não sensíveis da aplicação.&lt;br&gt;&lt;br&gt;🛈 O Deployment pode ser escalado horizontalmente, automaticamente, para até 100 Pods pelo HorizontalPodAutoscaler com base nas métricas fornecidas internamente pelo Metrics Server quando os Pods atingirem 50% de uso de CPU, em média." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Lucida Console;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="600" y="3769" width="720" height="239" as="geometry" />
+          <mxGeometry x="600" y="4210" width="720" height="239" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-147" value="🛈&amp;nbsp;Os manifestos yaml do Kubernetes estão localizados na pasta /k8s no GitHub." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=bottom;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Lucida Console;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="600" y="4369" width="720" height="239" as="geometry" />
+          <mxGeometry x="600" y="4810" width="720" height="239" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-148" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.995;exitY=0.63;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.005;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;flowAnimation=1;" parent="1" source="aZ776irZEMooX4o-13bk-150" target="aZ776irZEMooX4o-13bk-155" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="-170" y="4179" />
-              <mxPoint x="-170" y="4049" />
+              <mxPoint x="-170" y="4620" />
+              <mxPoint x="-170" y="4490" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-149" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.995;exitY=0.63;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.005;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;flowAnimation=1;" parent="1" source="aZ776irZEMooX4o-13bk-150" target="aZ776irZEMooX4o-13bk-161" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="-170" y="4179" />
-              <mxPoint x="-170" y="4319" />
+              <mxPoint x="-170" y="4620" />
+              <mxPoint x="-170" y="4760" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-150" value="Service&lt;br&gt;(name: health-med-api)&lt;br&gt;type: LoadBalancer" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=svc;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="-310" y="4149" width="50" height="48" as="geometry" />
+          <mxGeometry x="-310" y="4590" width="50" height="48" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-151" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.995;exitY=0.63;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.005;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;flowAnimation=1;" parent="1" source="aZ776irZEMooX4o-13bk-150" target="aZ776irZEMooX4o-13bk-158" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-152" value="Deployment&lt;br&gt;(name: health-med-api)" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=deploy;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="20" y="3829" width="50" height="48" as="geometry" />
+          <mxGeometry x="20" y="4270" width="50" height="48" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-153" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
-          <mxGeometry x="-15" y="4057" width="120" height="70" as="geometry" />
+          <mxGeometry x="-15" y="4498" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-154" value="health-med-api:latest" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=none;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/unicons-line-vol-3/24/docker-128.png" parent="1" vertex="1">
-          <mxGeometry x="26" y="4067" width="38" height="38" as="geometry" />
+          <mxGeometry x="26" y="4508" width="38" height="38" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-155" value="" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=pod;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="20" y="4019" width="50" height="48" as="geometry" />
+          <mxGeometry x="20" y="4460" width="50" height="48" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-156" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
-          <mxGeometry x="-9.5" y="4189" width="120" height="70" as="geometry" />
+          <mxGeometry x="-9.5" y="4630" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-157" value="health-med-api:latest" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=none;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/unicons-line-vol-3/24/docker-128.png" parent="1" vertex="1">
-          <mxGeometry x="31.5" y="4199" width="38" height="38" as="geometry" />
+          <mxGeometry x="31.5" y="4640" width="38" height="38" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-158" value="" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=pod;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="25.5" y="4149" width="50" height="48" as="geometry" />
+          <mxGeometry x="25.5" y="4590" width="50" height="48" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-159" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
-          <mxGeometry x="-14.75" y="4329" width="120" height="70" as="geometry" />
+          <mxGeometry x="-14.75" y="4770" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-160" value="health-med-api:latest" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=none;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/unicons-line-vol-3/24/docker-128.png" parent="1" vertex="1">
-          <mxGeometry x="26.25" y="4339" width="38" height="38" as="geometry" />
+          <mxGeometry x="26.25" y="4780" width="38" height="38" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-161" value="" style="aspect=fixed;sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon2;kubernetesLabel=1;prIcon=pod;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="20.25" y="4289" width="50" height="48" as="geometry" />
+          <mxGeometry x="20.25" y="4730" width="50" height="48" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-162" value="KUBERNETES LOGICAL ARCHITECTURE" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontFamily=Lucida Console;fontStyle=1;shadow=1;" parent="1" vertex="1">
-          <mxGeometry x="-480" y="3720" width="360" height="39" as="geometry" />
+          <mxGeometry x="-480" y="4161" width="360" height="39" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-165" value="kubectl" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.command_line_interface;" parent="1" vertex="1">
-          <mxGeometry x="-960" y="1646.01" width="40" height="40" as="geometry" />
+          <mxGeometry x="-960" y="1967.01" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="aZ776irZEMooX4o-13bk-121" value="🛈 O&amp;nbsp;bucket no S3 será configurado com a classe de armazenamento S3 Glacier Instant Retrieval (GLACIER_IR), recomendada pela AWS para arquivamento de imagens médicas e arquivos que precisam de acesso imediato.&lt;br&gt;&lt;br&gt;🛈 O KMS armazena a chave de criptografia do Bucket (SSE-KMS).&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;🛈 O Bucket S3 é privado e o controle de acesso ao bucket é feito pela aplicação, em conjunto com o AWS Cognito através de JSON Web Tokens (JWT).&lt;br&gt;&lt;br&gt;🛈 O compartilhamento seguro de arquivos é feito através de URLs pré-assinadas.&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=top;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Lucida Console;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="-800" y="1280" width="280" height="360" as="geometry" />
+          <mxGeometry x="-800" y="1601" width="280" height="360" as="geometry" />
         </mxCell>
         <mxCell id="_RXdKCglyneSRyfY8CZ5-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.05;entryY=0.533;entryDx=0;entryDy=0;entryPerimeter=0;flowAnimation=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="-h8u7tBZ8-VItpXT3ClL-5" target="_RXdKCglyneSRyfY8CZ5-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_RXdKCglyneSRyfY8CZ5-10" value="" style="group" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="-956.5" y="2479" width="200" height="81" as="geometry" />
+          <mxGeometry x="-956.5" y="2800" width="200" height="81" as="geometry" />
         </mxCell>
         <mxCell id="_RXdKCglyneSRyfY8CZ5-2" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.google" parent="_RXdKCglyneSRyfY8CZ5-10" vertex="1">
           <mxGeometry x="76.5" width="47" height="50" as="geometry" />
@@ -667,7 +667,7 @@
           <mxGeometry y="51" width="200" height="30" as="geometry" />
         </mxCell>
         <mxCell id="_RXdKCglyneSRyfY8CZ5-19" value="🛈 A imagem de container é gerada pelo workflow de CI/CD no GitHub Actions.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;🛈&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;O workflow de CI/CD só executa o deploy da aplicação após a execução bem sucedida de todos os testes.&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;🛈 A análise estática do&lt;/span&gt;&amp;nbsp;código-fonte é feita pelo SonarCloud.&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;labelPosition=center;verticalLabelPosition=middle;fontFamily=Lucida Console;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="2440" y="2020" width="240" height="280" as="geometry" />
+          <mxGeometry x="2440" y="2341" width="240" height="280" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
