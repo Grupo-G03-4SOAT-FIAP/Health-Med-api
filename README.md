@@ -231,6 +231,9 @@ $ npm run test:cov
 
 ## Projetos relacionados
 
+Lambda function da Teleconsulta\
+https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-teleconsulta
+
 Infrastructure as code (IaC) com Terraform\
 https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-iac
 
