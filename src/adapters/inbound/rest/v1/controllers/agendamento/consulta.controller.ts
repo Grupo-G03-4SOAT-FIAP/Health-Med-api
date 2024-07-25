@@ -19,6 +19,10 @@ import { BadRequestError } from '../../helpers/swagger/status-codes/bad_requests
 import { ConflictError } from '../../helpers/swagger/status-codes/conflict.swagger';
 import { NotFoundError } from '../../helpers/swagger/status-codes/not_found.swagger';
 
+type AgendaId = {
+  agendaId: string;
+};
+
 @Controller('consulta')
 @ApiTags('Consulta')
 export class ConsultaController {
@@ -50,10 +54,10 @@ export class ConsultaController {
     @CognitoUser('username') username: string,
     @CognitoUser('name') name: string,
     @CognitoUser('email') email: string,
-    @Body() agendaId: string,
+    @Body() agendaId: AgendaId,
   ): Promise<ConsultaDTO> {
     const agendarConsultaDTO = new AgendarConsultaDTO();
-    agendarConsultaDTO.agendaId = agendaId;
+    agendarConsultaDTO.agendaId = agendaId.agendaId;
     agendarConsultaDTO.cpfPaciente = username;
     agendarConsultaDTO.nomePaciente = name;
     agendarConsultaDTO.emailPaciente = email;
