@@ -214,7 +214,7 @@ Cloud provider: AWS
 
 *Mais detalhes sobre a motivação para adoção de cada serviço de nuvem estão disponíveis no diagrama.*
 
-![Diagrama de Arquitetura Cloud](./docs/arquitetura-cloud/dark/arquitetura-cloud.drawio.svg?raw=true)
+![Diagrama de Arquitetura Cloud](./docs/arquitetura-cloud/dark/arquitetura-cloud.drawio.png)
 
 *Clique na imagem para ampliar.*
 
