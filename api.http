@@ -127,7 +127,7 @@ Content-Disposition: form-data; name="file"
 title
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
 Content-Disposition: form-data; name="file"; filename="radiografia-de-demonstracao.jpg"
-Content-Type: application/pdf
+Content-Type: image/jpeg
 
 < ./docs/radiografia-de-demonstracao.jpg
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
