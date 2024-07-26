@@ -106,7 +106,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"data\": \"2024-07-21\",\r\n    \"horaInicio\": \"14:00:00\",\r\n    \"horaFim\": \"15:00:00\",\r\n    \"reservado\": true\r\n}",
+									"raw": "{\r\n    \"data\": \"2024-09-01\", // YYYY-MM-DD\r\n    \"horaInicio\": \"09:00:00\", // HH:mm:ss\r\n    \"horaFim\": \"09:50:00\", // HH:mm:ss\r\n    \"reservado\": true\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -140,8 +140,29 @@
 										}
 									]
 								},
-								"method": "GET",
-								"header": []
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"data\": \"2024-09-01\", // YYYY-MM-DD\r\n    \"horaInicio\": \"14:00:00\", // HH:mm:ss\r\n    \"horaFim\": \"14:50:00\", // HH:mm:ss\r\n    \"reservado\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/agenda/d832d9b9-cfd5-4960-8214-c4452800cf94",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"agenda",
+										"d832d9b9-cfd5-4960-8214-c4452800cf94"
+									]
+								}
 							},
 							"response": []
 						},
@@ -206,6 +227,43 @@
 										"agenda",
 										"free",
 										"d832d9b9-cfd5-4960-8214-c4452800cf94"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Alterar status da consulta (médico)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "<Coloque o IdToken gerado pelo Cognito aqui>",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/consulta/status/1dd766b8-b543-4d96-be7f-1ecc3c268312?status=recusada",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"consulta",
+										"status",
+										"1dd766b8-b543-4d96-be7f-1ecc3c268312"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "recusada"
+										}
 									]
 								}
 							},
@@ -358,43 +416,6 @@
 									"port": "3000",
 									"path": [
 										"consulta"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "3. Alterar status da consulta (paciente)",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "<Coloque o IdToken gerado pelo Cognito aqui>",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/consulta/status/1dd766b8-b543-4d96-be7f-1ecc3c268312?status=recusada",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"consulta",
-										"status",
-										"1dd766b8-b543-4d96-be7f-1ecc3c268312"
-									],
-									"query": [
-										{
-											"key": "status",
-											"value": "recusada"
-										}
 									]
 								}
 							},
