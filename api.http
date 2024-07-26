@@ -47,7 +47,7 @@ X-Amz-Target: AWSCognitoIdentityProviderService.InitiateAuth
 ### Listar todos os médicos
 GET http://localhost:3000/medico
 
-### Listar médicos com filtro
+### Buscar médicos com filtro
 GET http://localhost:3000/medico?especialidade=dermatologia&distancia=10&avaliacao=9
 
 ### Consultar um médico específico
