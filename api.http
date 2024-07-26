@@ -47,7 +47,7 @@ X-Amz-Target: AWSCognitoIdentityProviderService.InitiateAuth
 ### Listar todos os médicos
 GET http://localhost:3000/medico
 
-### Listar médicos com filtro
+### Buscar médicos com filtro
 GET http://localhost:3000/medico?especialidade=dermatologia&distancia=10&avaliacao=9
 
 ### Consultar um médico específico
@@ -64,9 +64,9 @@ Content-Type: application/json
 Authorization: Bearer {{AuthorizationMedico}}
 
 {
-  "data": "2024-07-21",
-  "horaInicio": "14:00:00",
-  "horaFim": "15:00:00",
+  "data": "2024-09-01",
+  "horaInicio": "09:00:00",
+  "horaFim": "09:50:00",
   "reservado": true
 }
 
@@ -76,9 +76,9 @@ Content-Type: application/json
 Authorization: Bearer {{AuthorizationMedico}}
 
 {
-  "data": "2024-07-21",
+  "data": "2024-09-01",
   "horaInicio": "14:00:00",
-  "horaFim": "15:00:00",
+  "horaFim": "14:50:00",
   "reservado": true
 }
 
