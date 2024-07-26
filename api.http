@@ -113,7 +113,7 @@ GET http://localhost:3000/prontuario
 Authorization: Bearer {{AuthorizationPaciente}}
 
 ### Compartilhar um arquivo do prontuário
-GET http://localhost:3000/prontuario/share/hackathon-soat.pdf
+GET http://localhost:3000/prontuario/share/radiografia-de-demonstracao.jpg
 Authorization: Bearer {{AuthorizationPaciente}}
 
 ### Upload de arquivo
@@ -126,8 +126,8 @@ Content-Disposition: form-data; name="file"
 
 title
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="file"; filename="hackathon-soat.pdf"
+Content-Disposition: form-data; name="file"; filename="radiografia-de-demonstracao.jpg"
 Content-Type: application/pdf
 
-< ./docs/hackathon-soat.pdf
+< ./docs/radiografia-de-demonstracao.jpg
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
