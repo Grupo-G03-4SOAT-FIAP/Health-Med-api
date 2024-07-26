@@ -1,0 +1,526 @@
+{
+	"info": {
+		"_postman_id": "ee9a7604-df30-44c7-9d8f-f8142b653241",
+		"name": "Health&Med Hackathon SOAT FIAP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4241772"
+	},
+	"item": [
+		{
+			"name": "Amazon Cognito",
+			"item": [
+				{
+					"name": "1. Autenticação (médico)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Amz-Target",
+								"value": "AWSCognitoIdentityProviderService.InitiateAuth"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-amz-json-1.1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"AuthFlow\": \"USER_PASSWORD_AUTH\",\r\n    \"AuthParameters\": {\r\n        \"USERNAME\": \"194528-SP\", // O CRM de teste do Dr. Arao Andrade Napoleao Lima é 194528-SP\r\n        \"PASSWORD\": \"Mudar@123\" // A senha padrão é Mudar@123\r\n    },\r\n    \"ClientId\": \"<Coloque o Client ID do Cognito aqui>\" // Informe o Client ID da sua aplicação aqui\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cognito-idp.us-east-1.amazonaws.com",
+							"protocol": "https",
+							"host": [
+								"cognito-idp",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Autenticação (paciente)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Amz-Target",
+								"value": "AWSCognitoIdentityProviderService.InitiateAuth"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-amz-json-1.1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"AuthFlow\": \"USER_PASSWORD_AUTH\",\r\n    \"AuthParameters\": {\r\n        \"USERNAME\": \"00000000191\", // O CPF do paciente de teste é 00000000191\r\n        \"PASSWORD\": \"Mudar@123\" // A senha padrão é Mudar@123\r\n    },\r\n    \"ClientId\": \"<Coloque o Client ID do Cognito aqui>\" // Informe o Client ID da sua aplicação aqui\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cognito-idp.us-east-1.amazonaws.com",
+							"protocol": "https",
+							"host": [
+								"cognito-idp",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Médicos",
+			"item": [
+				{
+					"name": "Agenda",
+					"item": [
+						{
+							"name": "2. Criar horário na agenda (médico)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "<Coloque o IdToken gerado pelo Cognito aqui>",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"data\": \"2024-09-01\", // YYYY-MM-DD\r\n    \"horaInicio\": \"09:00:00\", // HH:mm:ss\r\n    \"horaFim\": \"09:50:00\", // HH:mm:ss\r\n    \"reservado\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/agenda",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"agenda"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Editar horário na agenda (médico)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "<Coloque o IdToken gerado pelo Cognito aqui>",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"data\": \"2024-09-01\", // YYYY-MM-DD\r\n    \"horaInicio\": \"14:00:00\", // HH:mm:ss\r\n    \"horaFim\": \"14:50:00\", // HH:mm:ss\r\n    \"reservado\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/agenda/d832d9b9-cfd5-4960-8214-c4452800cf94",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"agenda",
+										"d832d9b9-cfd5-4960-8214-c4452800cf94"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Excluir horário da agenda (médico)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "<Coloque o IdToken gerado pelo Cognito aqui>",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "Excluir horário da agenda do médico",
+									"host": [
+										"Excluir horário da agenda do médico"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reservar horário na agenda (médico)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/agenda/book/d832d9b9-cfd5-4960-8214-c4452800cf94",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"agenda",
+										"book",
+										"d832d9b9-cfd5-4960-8214-c4452800cf94"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Liberar horário na agenda (médico)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/agenda/free/d832d9b9-cfd5-4960-8214-c4452800cf94",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"agenda",
+										"free",
+										"d832d9b9-cfd5-4960-8214-c4452800cf94"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Alterar status da consulta (médico)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "<Coloque o IdToken gerado pelo Cognito aqui>",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/consulta/status/1dd766b8-b543-4d96-be7f-1ecc3c268312?status=recusada",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"consulta",
+										"status",
+										"1dd766b8-b543-4d96-be7f-1ecc3c268312"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "recusada"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Pacientes",
+			"item": [
+				{
+					"name": "Prontuário",
+					"item": [
+						{
+							"name": "8.a Listar arquivos (paciente)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJraWQiOiI2djNvRlE4SVdZZHZQS1Zyb05BZHZCY3JzblYxVTJzcm1kc2pjRUFHdWswPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJlNGI4MzQxOC1hMDkxLTcwNWQtNTI5MC0xOGU1MmUzMTU4ZmEiLCJjb2duaXRvOmdyb3VwcyI6WyJwYWNpZW50ZXMiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfY25BUnlXMVdGIiwiY29nbml0bzp1c2VybmFtZSI6IjAwMDAwMDAwMTkxIiwib3JpZ2luX2p0aSI6IjdjYTA3NmZhLWIxNzUtNGFlMC1hOTNjLWQxODRmMjMyMTY1NSIsImF1ZCI6IjMwbTEwN3ZvdWw2Nmh0aXRtaWtlamxqZmFsIiwiZXZlbnRfaWQiOiI1Y2E5MzVmYi05YjgyLTQ3ZjMtODU4NS02YmM1NTViOGFlNGEiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTcyMTY4MjIyOSwibmFtZSI6IkZ1bGFubyBkYSBTaWx2YSIsImV4cCI6MTcyMTY4NTgyOSwiaWF0IjoxNzIxNjgyMjI5LCJqdGkiOiI2MzhlOWQ1ZC0zNGM4LTQ4NjEtYjVjNy1mYzk2YmQ2Mzc2ODEiLCJlbWFpbCI6ImZ1bGFuby5zaWx2YUBnbWFpbC5jb20ifQ.neUO6AStpoBMmkxWZen2YhXRWQWIriCaPSytAQjc_ztfSf-q9aX9OExbtyICE8QERjCWB2FzHnTxgTDzTu0REpa1X4w-36n7wlFoAKKdXx_ug98WrStDWN5iyLcQAgPVmqwgGJXQsnZnXjc-ChQjmJBoES9P-unNrmF-YwKBLQNYTgX7H_orvU1IkXjzVLhspIJgjfMd1kZznbBRrHzsODlaBdOuvnp2lbrpbusfzK3MVU-RzzyMfEAz_qe-N-ztEBu3Q93tCNTrGZaXA3b65N0UwX7k27r6jn-16Okh_lm7-37TZy3ZiWr4W4cNvJOVA2sGFq_kY45wM4-MZx-mKg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/prontuario",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"prontuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload (paciente)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "<Coloque o IdToken gerado pelo Cognito aqui>",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/danne/Downloads/hackathon-soat.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/prontuario",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"prontuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "8.b Compartilhar (paciente)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "<Coloque o IdToken gerado pelo Cognito aqui>",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/prontuario/share/hackathon-soat.pdf",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"prontuario",
+										"share",
+										"hackathon-soat.pdf"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Consultas",
+					"item": [
+						{
+							"name": "6. Agendar consulta (paciente)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "<Coloque o IdToken gerado pelo Cognito aqui>",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"agendaId\": \"6a9d3e75-06e2-4066-aa4a-9c2a5f44ba3f\" // Informe aqui o ID do horário (slot) na agenda do médico\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/consulta",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"consulta"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Buscar Médicos",
+			"item": [
+				{
+					"name": "Listar médicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/medico",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"medico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Buscar médicos com filtro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/medico?especialidade=dermatologia&distancia=10&avaliacao=9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"medico"
+							],
+							"query": [
+								{
+									"key": "especialidade",
+									"value": "dermatologia"
+								},
+								{
+									"key": "distancia",
+									"value": "10"
+								},
+								{
+									"key": "avaliacao",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar um médico específico",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/medico",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"medico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver todos os horários na agenda do médico",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/agenda/medico/87299678-a39f-46ff-a849-79c35f561945",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"agenda",
+								"medico",
+								"87299678-a39f-46ff-a849-79c35f561945"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
