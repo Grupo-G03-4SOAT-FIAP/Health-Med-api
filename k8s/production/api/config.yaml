@@ -8,3 +8,5 @@ metadata:
 data:
   DB_NAME: "health_med"
   DB_SSL: "false"
+  S3_BUCKET_ENDPOINT: ""
+  BUCKET_NAME_PRONTUARIOS: prontuarios-pacientes
