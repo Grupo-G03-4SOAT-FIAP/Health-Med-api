@@ -1,0 +1,1 @@
+Cópia parcial ou total deste material, incluindo layout das páginas da Wiki e/ou trechos do README, diagramas e código-fonte não são permitidos para os demais grupos das turmas 3SOAT E 4SOAT da FIAP.
