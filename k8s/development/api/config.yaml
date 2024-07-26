@@ -8,6 +8,8 @@ metadata:
 data:
   DB_NAME: "rms"
   DB_SSL: "false"
-  NOME_FILA_NOVA_COBRANCA: nova-cobranca
-  URL_FILA_NOVA_COBRANCA: 
-  REGION_FILA_NOVA_COBRANCA: us-east-1
+  S3_BUCKET_ENDPOINT: http://s3.localhost.localstack.cloud:4566
+  BUCKET_NAME_PRONTUARIOS: prontuarios-pacientes
+  NOME_FILA_EXEMPLO: nova-cobranca
+  URL_FILA_EXEMPLO: 
+  REGION_FILA_EXEMPLO: us-east-1
