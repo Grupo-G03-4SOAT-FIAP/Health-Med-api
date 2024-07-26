@@ -136,7 +136,9 @@ Para testar o agendamento de consultas com o Google Meet siga o passo a passo di
 
 ## Banco de Dados
 
-Entendemos que o modelo relacional é o que mais se adequa ao nosso problema de negócio, contexto atual e requisitos na API da Health&Med. Leia mais sobre as motivações para adoção do modelo relacional no [Architectural Decision Record (ADR)](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-Banco-de-Dados-da-Health&Med).
+Entendemos que o modelo relacional é o que mais se adequa ao nosso problema de negócio, contexto atual e requisitos na API da Health&Med.
+
+Leia mais sobre as motivações para adoção do modelo relacional no [Architectural Decision Record (ADR)](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Banco-de-Dados-Health&Med).
 
 <details>
 
@@ -174,7 +176,9 @@ Architectural Pattern: [Modular Monolith](https://www.milanjovanovic.tech/blog/w
 
 > ⚠️"Você não deve iniciar um novo projeto com microsserviços, mesmo se tiver certeza de que seu aplicativo será grande o suficiente para valer a pena." — [Martin Fowler](https://martinfowler.com/bliki/MonolithFirst.html#:~:text=you%20shouldn%27t%20start%20a%20new%20project%20with%20microservices%2C%20even%20if%20you%27re%20sure%20your%20application%20will%20be%20big%20enough%20to%20make%20it%20worthwhile.)
 
-*Ao optar por um monolito modular temos o melhor dos dois mundos: A simplicidade e facilidade de gerenciamento de um monolito aliada a modularidade, flexibilidade e baixo acoplamento dos microsserviços. Leia mais sobre as motivações para implementação de um monolito modular em [Decisão de Arquitetura para o MVP da Health&Med](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-o-MVP-da-Health&Med) na documentação.*
+*Ao optar por um monolito modular temos o melhor dos dois mundos: A simplicidade e facilidade de gerenciamento de um monolito aliada a modularidade, flexibilidade e baixo acoplamento dos microsserviços.*
+
+Leia mais sobre as motivações para implementação de um monolito modular em [Decisão de Arquitetura para o MVP da Health&Med](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-MVP-Health&Med) na documentação.
 
 </details>
 
@@ -184,7 +188,9 @@ Architectural Pattern: [Modular Monolith](https://www.milanjovanovic.tech/blog/w
 
 ## Modelo Relacional
 
-*Entendemos que o modelo relacional é o que mais se adequa ao nosso problema de negócio, contexto atual e requisitos na API da Health&Med. Leia mais sobre as motivações para adoção do modelo relacional em [Decisão de Arquitetura para Banco de Dados da Health&Med](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-Banco-de-Dados-da-Health&Med) na documentação.*
+*Entendemos que o modelo relacional é o que mais se adequa ao nosso problema de negócio, contexto atual e requisitos na API da Health&Med.*
+
+Leia mais sobre as motivações para adoção do modelo relacional em [Decisão de Arquitetura para Banco de Dados da Health&Med](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Banco-de-Dados-Health&Med) na documentação.
 
 </details>
 
@@ -194,7 +200,9 @@ Architectural Pattern: [Modular Monolith](https://www.milanjovanovic.tech/blog/w
 
 ## SAGA Coreografada
 
-*Devido a pequena quantidade de membros, optamos pela SAGA coreografada, conforme recomendado por Chris Richardson no livro "[Microservices Patterns](https://www.amazon.com.br/Microservice-Patterns-examples-Chris-Richardson/dp/1617294543)". Leia mais sobre as motivações para implementação de uma SAGA coreografada em [Decisão de Arquitetura para SAGA da Health&Med](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-SAGA-da-Health&Med) na documentação.*
+*Devido a pequena quantidade de membros, optamos pela SAGA coreografada, conforme recomendado por Chris Richardson no livro "[Microservices Patterns](https://www.amazon.com.br/Microservice-Patterns-examples-Chris-Richardson/dp/1617294543)".*
+
+Leia mais sobre as motivações para implementação de uma SAGA coreografada em [Decisão de Arquitetura para SAGA da Health&Med](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-SAGA-Health&Med) na documentação.
 
 </details>
 
@@ -204,7 +212,9 @@ Architectural Pattern: [Modular Monolith](https://www.milanjovanovic.tech/blog/w
 
 ## Backend for Frontend
 
-*O API Gateway como BFF funciona como um único ponto de entrada para o(s) front-end(s), que não precisam conhecer o endereço de cada um dos serviços no backend. Outra grande vantagem é também a autenticação, realizada pelo próprio API Gateway em conjunto com o IdP Cognito da AWS. Leia mais sobre as motivações para implementação do BFF em [Decisão de Arquitetura para o BFF da Health&Med](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-Arquitetura-para-o-BFF-da-Health&Med) na documentação.*
+*O API Gateway como BFF funciona como um único ponto de entrada para o(s) front-end(s), que não precisam conhecer o endereço de cada um dos serviços no backend. Outra grande vantagem é também a autenticação, realizada pelo próprio API Gateway em conjunto com o IdP Cognito da AWS.*
+
+Leia mais sobre as motivações para implementação do BFF em [Decisão de Arquitetura para o BFF da Health&Med](https://github.com/Grupo-G03-4SOAT-FIAP/Health-Med-api/wiki/Decis%C3%A3o-de-BFF-Health&Med) na documentação.
 
 </details>
 
