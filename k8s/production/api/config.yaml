@@ -8,5 +8,5 @@ metadata:
 data:
   DB_NAME: "health_med"
   DB_SSL: "false"
-  S3_BUCKET_ENDPOINT: http://s3.localhost.localstack.cloud:4566
+  S3_BUCKET_ENDPOINT: http://localstack:4566
   BUCKET_NAME_PRONTUARIOS: prontuarios-pacientes
