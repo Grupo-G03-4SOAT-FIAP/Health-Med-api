@@ -9,7 +9,9 @@
 
 Projeto desenvolvido durante o Hackathon da [Pós Tech em Software Architecture da FIAP](https://postech.fiap.com.br/curso/software-architecture/).
 
-▶️[Clique aqui para assistir à apresentação no YouTube!](https://www.youtube.com/@BOPEtechFIAP)
+🏆 Projeto vencedor do Hackathon Turma 4SOAT
+
+▶️[Clique aqui para assistir à apresentação no YouTube!](https://youtu.be/qFley2ZkoG4?si=48dF2hA0CMvSsE0P)
 
 ### O PROBLEMA
 
